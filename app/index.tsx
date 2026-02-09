@@ -1,9 +1,16 @@
 import { Redirect } from "expo-router";
+import { useAuthStore } from "@/stores/authStore";
 
 export default function Index() {
-  // TODO: Check auth state and onboarding status
-  // - Not onboarded → /onboarding/welcome
-  // - Not signed in → /auth/sign-in
-  // - Signed in → /(tabs)/library
+  const { hasOnboarded, isAuthenticated } = useAuthStore();
+
+  if (!hasOnboarded) {
+    return <Redirect href="/onboarding/welcome" />;
+  }
+
+  if (!isAuthenticated) {
+    return <Redirect href="/auth/sign-in" />;
+  }
+
   return <Redirect href="/(tabs)/library" />;
 }

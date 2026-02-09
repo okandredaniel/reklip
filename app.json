@@ -11,10 +11,14 @@
       "bundleIdentifier": "com.livecapture.app",
       "supportsTablet": true,
       "infoPlist": {
-        "UIBackgroundModes": ["audio"],
+        "UIBackgroundModes": [
+          "audio",
+          "audio"
+        ],
         "NSMicrophoneUsageDescription": "LiveCapture needs your microphone to record audio.",
         "NSCameraUsageDescription": "LiveCapture needs your camera to capture photos and videos during recordings.",
-        "NSPhotoLibraryUsageDescription": "LiveCapture saves captured photos to your library."
+        "NSPhotoLibraryUsageDescription": "LiveCapture saves captured photos to your library.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -36,6 +40,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "691c0ac4-ecab-4be4-a12b-b8c7ef83cee9"
+      }
+    },
+    "owner": "andredaniel"
   }
 }
