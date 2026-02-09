@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In to LiveCapture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2977f5",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", /* Adjusted to match request deep navy */
+                        "surface-dark": "#111B2E", /* Card background from request */
+                        "border-dark": "#1E2D45", /* Border color from request */
+                        "text-secondary": "#7B8BA3", /* Secondary text from request */
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col items-center justify-center p-0 m-0">
+<!-- Mobile Container mimicking iPhone 15 Pro frame implicitly via max-width -->
+<div class="w-full max-w-md h-screen flex flex-col relative overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+<!-- Status Bar Placeholder (Safe Area) -->
+<div class="h-12 w-full flex-shrink-0"></div>
+<!-- Top Section: Brand (approx 40% height) -->
+<div class="flex-1 flex flex-col items-center justify-center px-6 pb-6 pt-10 min-h-[35vh]">
+<!-- Logo Container -->
+<div class="w-24 h-24 rounded-3xl bg-surface-dark border border-border-dark flex items-center justify-center mb-6 shadow-2xl shadow-primary/10 relative overflow-hidden group">
+<!-- Abstract visual behind logo -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-50"></div>
+<!-- Microphone Icon -->
+<span class="material-symbols-outlined text-primary text-5xl relative z-10" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">mic</span>
+<!-- Animated Waveforms (Static for this output but implied motion) -->
+<div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1 h-8 items-end opacity-40">
+<div class="w-1 bg-primary rounded-full h-3"></div>
+<div class="w-1 bg-primary rounded-full h-5"></div>
+<div class="w-1 bg-primary rounded-full h-4"></div>
+<div class="w-1 bg-primary rounded-full h-6"></div>
+<div class="w-1 bg-primary rounded-full h-3"></div>
+</div>
+</div>
+<h1 class="text-3xl font-bold text-center tracking-tight text-slate-900 dark:text-white mb-2">LiveCapture</h1>
+<p class="text-slate-500 dark:text-text-secondary text-base font-normal text-center">Capture. React. Create.</p>
+</div>
+<!-- Form Section -->
+<div class="w-full px-6 pb-8 flex flex-col gap-5 z-10">
+<!-- Email Input -->
+<div class="group relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary flex items-center pointer-events-none transition-colors group-focus-within:text-primary">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<input class="w-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-lg py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200" placeholder="Email Address" type="email"/>
+</div>
+<!-- Password Input -->
+<div class="group relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary flex items-center pointer-events-none transition-colors group-focus-within:text-primary">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<input class="w-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-lg py-4 pl-12 pr-12 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200" placeholder="Password" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary hover:text-slate-600 dark:hover:text-white flex items-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">visibility</span>
+</button>
+</div>
+<!-- Forgot Password -->
+<div class="flex justify-end">
+<a class="text-primary text-sm font-medium hover:text-blue-400 transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Sign In Button -->
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/25 active:scale-[0.98] transition-all duration-200 text-base">
+                Sign In
+            </button>
+<!-- Divider -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-slate-200 dark:border-border-dark"></div>
+<span class="flex-shrink-0 mx-4 text-slate-400 dark:text-text-secondary text-sm">or</span>
+<div class="flex-grow border-t border-slate-200 dark:border-border-dark"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 bg-white dark:bg-transparent border border-slate-200 dark:border-border-dark hover:bg-slate-50 dark:hover:bg-surface-dark text-slate-700 dark:text-white py-3 rounded-lg transition-colors duration-200">
+<svg class="w-5 h-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-medium">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-white dark:bg-transparent border border-slate-200 dark:border-border-dark hover:bg-slate-50 dark:hover:bg-surface-dark text-slate-700 dark:text-white py-3 rounded-lg transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.05 20.28c-.98.95-2.05.88-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.1 1.85-2.54 5.88.33 7.16-.58 1.62-1.39 3.06-2.38 4.05zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path>
+</svg>
+<span class="text-sm font-medium">Apple</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<div class="pb-8 w-full text-center">
+<p class="text-slate-500 dark:text-text-secondary text-sm">
+                Don't have an account? <a class="text-primary font-semibold hover:text-blue-400" href="#">Sign up</a>
+</p>
+</div>
+<!-- Home Indicator Safe Area -->
+<div class="h-6 w-full flex-shrink-0"></div>
+</div>
+</body></html>

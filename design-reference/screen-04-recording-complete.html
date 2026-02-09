@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post-Recording Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep Navy as requested
+                        "card-dark": "#111B2E",
+                        "border-dark": "#1E2D45",
+                        "success": "#22C55E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col overflow-hidden text-slate-900 dark:text-white">
+<!-- Header Area -->
+<header class="pt-12 pb-4 px-4 flex items-center justify-between bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success">check_circle</span>
+<h1 class="text-base font-bold tracking-tight">Recording Complete</h1>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 overflow-y-auto pb-32 px-4 space-y-8">
+<!-- Recording Details Card -->
+<section class="bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark p-5 shadow-sm">
+<!-- Editable Title & Subtitle -->
+<div class="space-y-1 mb-4">
+<div class="flex items-start justify-between gap-2">
+<input class="bg-transparent border-0 p-0 text-xl font-bold text-slate-900 dark:text-white placeholder-slate-400 focus:ring-0 w-full" type="text" value="Sunday Morning Sermon"/>
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">edit</span>
+</div>
+<input class="bg-transparent border-0 p-0 text-base font-medium text-slate-500 dark:text-slate-400 placeholder-slate-500 focus:ring-0 w-full" type="text" value="Pastor João Silva"/>
+</div>
+<!-- Stats Row -->
+<div class="flex flex-wrap items-center gap-x-2 text-xs font-medium text-slate-500 dark:text-slate-400 mb-6">
+<span>1h 12min</span>
+<span>·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">flag</span> 14 Markers</span>
+<span>·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">photo_camera</span> 4 Photos</span>
+<span>·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">videocam</span> 2 Videos</span>
+</div>
+<!-- Visual Timeline -->
+<div class="relative h-8 flex items-center w-full">
+<!-- Base Line -->
+<div class="absolute w-full h-1 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+<!-- Progress Line (Full because recording is complete) -->
+<div class="absolute w-full h-1 bg-primary/40 rounded-full"></div>
+<!-- Markers (Dots) positioned absolutely based on percentages -->
+<div class="absolute left-[10%] w-2.5 h-2.5 bg-primary rounded-full border-2 border-white dark:border-card-dark"></div>
+<div class="absolute left-[25%] w-2.5 h-2.5 bg-purple-500 rounded-full border-2 border-white dark:border-card-dark" title="Photo"></div>
+<div class="absolute left-[32%] w-2.5 h-2.5 bg-primary rounded-full border-2 border-white dark:border-card-dark"></div>
+<div class="absolute left-[45%] w-2.5 h-2.5 bg-amber-500 rounded-full border-2 border-white dark:border-card-dark" title="Video"></div>
+<div class="absolute left-[60%] w-2.5 h-2.5 bg-primary rounded-full border-2 border-white dark:border-card-dark"></div>
+<div class="absolute left-[82%] w-2.5 h-2.5 bg-purple-500 rounded-full border-2 border-white dark:border-card-dark" title="Photo"></div>
+<div class="absolute left-[95%] w-2.5 h-2.5 bg-primary rounded-full border-2 border-white dark:border-card-dark"></div>
+</div>
+</section>
+<!-- Templates Section -->
+<section>
+<h3 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">Select Template</h3>
+<div class="flex overflow-x-auto no-scrollbar gap-3 pb-2 -mx-4 px-4 snap-x">
+<!-- Selected Card -->
+<button class="snap-center shrink-0 w-32 h-24 bg-white dark:bg-card-dark rounded-xl border-2 border-primary shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)] flex flex-col items-center justify-center gap-2 transition-all relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5"></div>
+<span class="material-symbols-outlined text-primary text-3xl">church</span>
+<span class="text-sm font-semibold text-primary">Sermon</span>
+<div class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></div>
+</button>
+<!-- Unselected Card 1 -->
+<button class="snap-center shrink-0 w-32 h-24 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark flex flex-col items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-3xl">school</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Lecture</span>
+</button>
+<!-- Unselected Card 2 -->
+<button class="snap-center shrink-0 w-32 h-24 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark flex flex-col items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-3xl">groups</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Conference</span>
+</button>
+<!-- Unselected Card 3 -->
+<button class="snap-center shrink-0 w-32 h-24 bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark flex flex-col items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-3xl">bolt</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Quick Note</span>
+</button>
+</div>
+</section>
+<!-- Content Outputs Section -->
+<section>
+<h3 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">Content Outputs</h3>
+<div class="space-y-3">
+<!-- Toggle Item 1 -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-500">summarize</span>
+</div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Summary &amp; Key Points</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Condensed overview with bullets</p>
+</div>
+</div>
+<!-- Active Toggle -->
+<div class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out bg-primary">
+<span class="pointer-events-none translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+<!-- Toggle Item 2 -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-500">menu_book</span>
+</div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Study Guide</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Questions &amp; discussion topics</p>
+</div>
+</div>
+<!-- Active Toggle -->
+<div class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out bg-primary">
+<span class="pointer-events-none translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+<!-- Toggle Item 3 -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-500">movie</span>
+</div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Social Media Clips</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Stories, Reels, Shorts ready</p>
+</div>
+</div>
+<!-- Active Toggle -->
+<div class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out bg-primary">
+<span class="pointer-events-none translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+<!-- Toggle Item 4 -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-500">format_quote</span>
+</div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Quote Cards</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Shareable image posts</p>
+</div>
+</div>
+<!-- Active Toggle -->
+<div class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out bg-primary">
+<span class="pointer-events-none translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-border-dark p-4 pb-8 z-20">
+<div class="flex flex-col gap-3">
+<button class="w-full h-14 bg-primary hover:bg-blue-600 text-white font-bold rounded-2xl flex items-center justify-center gap-2 text-lg shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] transition-all transform active:scale-[0.98]">
+<span class="material-symbols-outlined">auto_awesome</span>
+                Process with AI
+            </button>
+<button class="w-full py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                Save draft for later
+            </button>
+</div>
+</div>
+</body></html>

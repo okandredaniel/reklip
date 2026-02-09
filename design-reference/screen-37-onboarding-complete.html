@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", 
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", 
+                        "text-secondary": "#7B8BA3",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        'glow': '0 0 60px -10px rgba(59, 130, 246, 0.4)',
+                        'glow-intense': '0 0 80px 0px rgba(59, 130, 246, 0.5)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom subtle confetti/particles background */
+        .bg-particles {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 10%),
+                radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.1) 0%, transparent 8%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 5%),
+                radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 10%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white h-full min-h-screen flex flex-col overflow-hidden">
+<!-- Main Container -->
+<main class="relative flex flex-col flex-1 h-full w-full max-w-md mx-auto bg-background-light dark:bg-background-dark items-center justify-between pt-12 pb-8 px-6 bg-particles">
+<!-- Top Spacer for Visual Balance -->
+<div class="flex-1"></div>
+<!-- Center Content: Hero & Typography -->
+<div class="flex flex-col items-center justify-center w-full z-10">
+<!-- Hero Element: Glowing Checkmark -->
+<div class="relative mb-10 group">
+<!-- Outer Glow/Light Rays Effect -->
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-150 transform transition-transform duration-1000 animate-pulse"></div>
+<!-- Inner Circle Container -->
+<div class="relative flex items-center justify-center w-32 h-32 rounded-full bg-[#151f32] border border-primary/20 shadow-glow-intense">
+<!-- Confetti Accents (Decorative SVGs) -->
+<div class="absolute top-0 right-0 -mt-2 -mr-4 opacity-60">
+<span class="material-symbols-outlined text-primary text-xl rotate-12">star</span>
+</div>
+<div class="absolute bottom-0 left-0 -mb-2 -ml-4 opacity-40">
+<span class="material-symbols-outlined text-primary text-lg -rotate-12">star</span>
+</div>
+<div class="absolute top-1/2 left-0 -ml-8 opacity-30">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="absolute top-0 left-1/2 -mt-8 opacity-30">
+<div class="w-1.5 h-1.5 rounded-full bg-blue-300"></div>
+</div>
+<!-- Main Icon -->
+<span class="material-symbols-outlined text-primary text-[64px]" style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
+                        check
+                    </span>
+</div>
+</div>
+<!-- Typography -->
+<div class="text-center space-y-4 max-w-xs mx-auto">
+<h1 class="text-3xl md:text-[32px] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+                    You’re All Set!
+                </h1>
+<p class="text-base text-slate-500 dark:text-text-secondary leading-relaxed font-normal">
+                    Your studio is ready. You can now record, react, and let AI handle the rest.
+                </p>
+</div>
+</div>
+<!-- Bottom Spacer to push content up slightly -->
+<div class="flex-[1.5]"></div>
+<!-- Footer Action -->
+<div class="w-full z-10 pb-6 safe-area-pb">
+<button class="w-full h-14 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all duration-200 text-white font-bold text-lg rounded-full shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 group">
+<span>Go to My Library</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">
+                    arrow_forward
+                </span>
+</button>
+</div>
+</main>
+</body></html>

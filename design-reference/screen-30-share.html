@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Export &amp; Share Options</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                        "sheet-bg": "#111B2E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "sheet": "24px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden select-none">
+<!-- Screen Container (iPhone 15 Pro simulation) -->
+<div class="relative w-full h-screen max-w-md mx-auto flex flex-col overflow-hidden bg-gray-900 shadow-2xl">
+<!-- Background: Simulated Library Screen (Blurred/Dimmed) -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-40 blur-sm" data-alt="Abstract library shelves background with books" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeJjEaMWAfypYTLcGu1M1VtudDwcC_2SXRzbuTL0-Y9t3pHQg4NwQIKO4Cw_ENJ-PPRYuj55xyXzmXiPkXb_4MRucHbfrFVTMCI-GynyfddS1kchMPPd7OUMTLjiT6cVKnu7IKD5S_EYBANtHnhia-PTTATAFMbPAl-lXPDTTMrKDuPk7wY9wz172mrYp44chbh8As4oyEqn6uvQaZL16MdgiVkM4pUhiabmUgCCNIwMqmFQTBLrS_3as-MMqT-Bys30SKZMfu0qw2');">
+</div>
+<!-- Overlay Dimmer -->
+<div class="absolute inset-0 z-10 bg-black/50"></div>
+<!-- Main Content Area Behind Overlay (Just for visual context) -->
+<div class="relative z-0 flex-1 flex flex-col p-6 opacity-20 pointer-events-none">
+<div class="flex justify-between items-center mb-8">
+<div class="w-8 h-8 rounded-full bg-white/20"></div>
+<div class="w-24 h-6 rounded-full bg-white/20"></div>
+<div class="w-8 h-8 rounded-full bg-white/20"></div>
+</div>
+<div class="w-full h-48 rounded-xl bg-white/10 mb-6"></div>
+<div class="space-y-4">
+<div class="w-3/4 h-4 rounded bg-white/10"></div>
+<div class="w-1/2 h-4 rounded bg-white/10"></div>
+<div class="w-full h-4 rounded bg-white/10"></div>
+</div>
+</div>
+<!-- Bottom Sheet Container -->
+<div class="absolute bottom-0 left-0 right-0 z-50 flex flex-col justify-end">
+<!-- Sheet -->
+<div class="bg-sheet-bg w-full rounded-t-[24px] pb-8 pt-2 shadow-2xl border-t border-white/5 relative flex flex-col max-h-[90vh]">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-2 pb-4">
+<div class="w-12 h-1.5 rounded-full bg-gray-600/50"></div>
+</div>
+<!-- Header -->
+<div class="px-6 flex items-center justify-between mb-6">
+<div class="w-8"></div> <!-- Spacer for balance -->
+<h3 class="text-white text-xl font-bold tracking-tight">Share Content</h3>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-6 space-y-8">
+<!-- Section: EXPORT FORMAT -->
+<div>
+<p class="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-3">Export Format</p>
+<div class="flex flex-wrap gap-3">
+<!-- Active Pill -->
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white font-medium shadow-lg shadow-blue-900/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px] fill-1">picture_as_pdf</span>
+<span>PDF</span>
+</button>
+<!-- Inactive Pills -->
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 text-gray-300 font-medium hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span>Text</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 text-gray-300 font-medium hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">markdown</span>
+<span>Markdown</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 text-gray-300 font-medium hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">image</span>
+<span>Image</span>
+</button>
+</div>
+</div>
+<!-- Section: SHARE TO -->
+<div>
+<p class="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-3">Share To</p>
+<div class="grid grid-cols-5 gap-4">
+<!-- AirDrop -->
+<div class="flex flex-col items-center gap-2 group">
+<button class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white text-2xl">wifi_tethering</span>
+</button>
+<span class="text-[10px] text-gray-400 font-medium">AirDrop</span>
+</div>
+<!-- Messages -->
+<div class="flex flex-col items-center gap-2 group">
+<button class="w-14 h-14 rounded-full bg-[#34C759] flex items-center justify-center transition-transform active:scale-95 shadow-lg shadow-green-900/20">
+<span class="material-symbols-outlined text-white text-2xl fill-1">chat_bubble</span>
+</button>
+<span class="text-[10px] text-gray-400 font-medium">Messages</span>
+</div>
+<!-- Mail -->
+<div class="flex flex-col items-center gap-2 group">
+<button class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center transition-transform active:scale-95 shadow-lg shadow-blue-900/20">
+<span class="material-symbols-outlined text-white text-2xl fill-1">mail</span>
+</button>
+<span class="text-[10px] text-gray-400 font-medium">Mail</span>
+</div>
+<!-- WhatsApp -->
+<div class="flex flex-col items-center gap-2 group">
+<button class="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center transition-transform active:scale-95 shadow-lg shadow-green-900/20">
+<span class="material-symbols-outlined text-white text-2xl">call</span>
+</button>
+<span class="text-[10px] text-gray-400 font-medium">WhatsApp</span>
+</div>
+<!-- More -->
+<div class="flex flex-col items-center gap-2 group">
+<button class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-300 text-2xl">more_horiz</span>
+</button>
+<span class="text-[10px] text-gray-400 font-medium">More</span>
+</div>
+</div>
+</div>
+<!-- Section: INCLUDE -->
+<div>
+<p class="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-1">Include</p>
+<div class="divide-y divide-white/5">
+<!-- Toggle Item: Summary -->
+<div class="flex items-center justify-between py-4">
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm">AI Summary</span>
+<span class="text-gray-500 text-xs">Generated overview of content</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item: Study Guide -->
+<div class="flex items-center justify-between py-4">
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm">Study Guide</span>
+<span class="text-gray-500 text-xs">Practice questions &amp; notes</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item: Key Terms -->
+<div class="flex items-center justify-between py-4">
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm">Key Terms</span>
+<span class="text-gray-500 text-xs">Glossary of important words</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-4 px-6 pt-4 pb-8 bg-sheet-bg border-t border-white/5">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 rounded-full shadow-lg shadow-blue-900/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2 text-lg">
+<span class="material-symbols-outlined">ios_share</span>
+                        Share File
+                    </button>
+<!-- Home Indicator Area -->
+<div class="h-1 w-1/3 bg-white/20 mx-auto rounded-full mt-6"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

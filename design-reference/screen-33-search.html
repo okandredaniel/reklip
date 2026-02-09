@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - LiveCapture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8", // Not used in this specific dark-mode-only view per instructions, but kept for config consistency
+                        "background-dark": "#0B1120", // Deep Navy
+                        "card-dark": "#111B2E",
+                        "border-dark": "#1E2D45",
+                        "text-secondary": "#94A3B8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display overflow-hidden flex justify-center w-full min-h-screen">
+<!-- Mobile Frame Wrapper -->
+<div class="w-full max-w-[420px] h-full min-h-screen flex flex-col relative bg-[#0B1120]">
+<!-- Status Bar Area (Mock) -->
+<div class="h-12 w-full flex items-center justify-between px-6 pt-2">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex gap-1.5">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24">wifi</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24">battery_full</span>
+</div>
+</div>
+<!-- Search Header -->
+<div class="px-4 py-2 flex items-center gap-3 w-full sticky top-0 z-10 bg-[#0B1120]">
+<button class="text-white p-2 -ml-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 bg-card-dark border border-border-dark rounded-xl text-white placeholder-text-secondary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm shadow-sm" placeholder="Search recordings..." type="text" value="grace"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+<button class="text-text-secondary hover:text-white p-1 rounded-full">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-4 pb-24">
+<!-- Result Count -->
+<div class="py-4">
+<p class="text-text-secondary text-xs font-semibold tracking-wider uppercase">Results (12 found)</p>
+</div>
+<!-- Group: Transcripts -->
+<div class="mb-6">
+<h3 class="text-text-secondary text-xs font-bold tracking-wide mb-3 uppercase">In Transcripts</h3>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="bg-card-dark border border-border-dark rounded-xl p-4 active:bg-[#1A2639] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary/20 text-primary text-xs font-semibold px-2 py-0.5 rounded">02:14</span>
+<span class="text-text-secondary text-xs">Sunday Service</span>
+</div>
+<p class="text-sm text-gray-300 leading-relaxed font-medium">
+                            ...we have been saved by <span class="text-primary font-bold">grace</span> through faith, and this is not your own doing; it is the gift of God...
+                        </p>
+<!-- Fake Waveform -->
+<div class="flex items-center gap-0.5 mt-3 h-4 opacity-40 group-hover:opacity-60 transition-opacity">
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-3 rounded-full"></div>
+<div class="w-1 bg-white h-4 rounded-full"></div>
+<div class="w-1 bg-primary h-3 rounded-full"></div>
+<div class="w-1 bg-primary h-5 rounded-full"></div>
+<div class="w-1 bg-primary h-3 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-1 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-card-dark border border-border-dark rounded-xl p-4 active:bg-[#1A2639] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary/20 text-primary text-xs font-semibold px-2 py-0.5 rounded">15:30</span>
+<span class="text-text-secondary text-xs">Bible Study Group</span>
+</div>
+<p class="text-sm text-gray-300 leading-relaxed font-medium">
+                            ...but to each one of us <span class="text-primary font-bold">grace</span> has been given as Christ apportioned it. This is why it says...
+                        </p>
+<!-- Fake Waveform -->
+<div class="flex items-center gap-0.5 mt-3 h-4 opacity-40 group-hover:opacity-60 transition-opacity">
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-1 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-3 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-primary h-4 rounded-full"></div>
+<div class="w-1 bg-primary h-3 rounded-full"></div>
+<div class="w-1 bg-primary h-4 rounded-full"></div>
+<div class="w-1 bg-white h-2 rounded-full"></div>
+<div class="w-1 bg-white h-1 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Group: Markers -->
+<div class="mb-6">
+<h3 class="text-text-secondary text-xs font-bold tracking-wide mb-3 uppercase">In Markers</h3>
+<div class="bg-card-dark border border-border-dark rounded-xl p-4 flex items-center gap-4 active:bg-[#1A2639] transition-colors cursor-pointer">
+<div class="h-10 w-10 rounded-lg bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 flex-shrink-0">
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-white text-sm font-semibold truncate">Important definition of Grace</h4>
+<p class="text-text-secondary text-xs mt-0.5">Marked at 18:45 • Youth Camp</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Group: Photos -->
+<div class="mb-6">
+<h3 class="text-text-secondary text-xs font-bold tracking-wide mb-3 uppercase">In Photos</h3>
+<div class="bg-card-dark border border-border-dark rounded-xl p-3 flex gap-4 active:bg-[#1A2639] transition-colors cursor-pointer items-center">
+<div class="h-16 w-24 rounded-lg bg-gray-800 flex-shrink-0 overflow-hidden relative border border-border-dark">
+<img alt="Slide presentation background with text overlay" class="w-full h-full object-cover opacity-80" data-alt="Slide presentation background with text overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7AnVy1MBntx7svvZT0_3yoKMZlyU46BPY9SWj_Hl6oUHp1OVoi0BqRA-1cxUt0iRFpJDtKQ1E5E5lGMii0_zsX3-0KxX116Zb_G5dJdnQgTdNSrZH6iAalrq-ZAJ6BoJmTaiSfpMJTBhn4hXKjKR8UEae5lKITYN4IjCSM4STX8f2uPbwoCzS5xk60X55a6lU1WlL-WZrovkN9kX1Yvy3byefDoqmfyM_UNgQkSwCsFeIg5Pk0uSIL4nGmOEnF8s3lOlwHX5zkw2X"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20">
+<span class="material-symbols-outlined text-white/80 text-[20px]">crop_free</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-text-secondary text-[16px]">image</span>
+<span class="text-text-secondary text-xs">Slide Capture • 22:10</span>
+</div>
+<p class="text-sm text-gray-300 font-medium line-clamp-2">
+                            Ephesians 2:8 For by <span class="text-primary font-bold">grace</span> you have been saved through faith...
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="h-[84px] bg-[#0B1120]/95 backdrop-blur-lg border-t border-border-dark w-full fixed bottom-0 left-0 z-50 px-6 pb-6 pt-3 max-w-[420px] mx-auto right-0">
+<div class="flex justify-between items-center h-full">
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">mic</span>
+<span class="text-[10px] font-medium">Record</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-primary">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1">search</span>
+<span class="text-[10px] font-medium">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

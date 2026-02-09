@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Content Output Preferences</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep Navy
+                        "card-dark": "#111B2E",
+                        "card-border": "#1E2D45",
+                        "text-secondary": "#7B8BA3",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>/* Custom scrollbar hiding for clean UI */
+.no-scrollbar::-webkit-scrollbar {
+    display: none
+    }
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }
+/* Custom checkbox style hack to match design */
+.custom-checkbox:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBfB_kZ7QNDixWwPIZ4O9nRwwXUqomAzGBeAVuMhaKz0nCIwy7Ed8EgHXqF7A_QaSLxWIjYsTeJFRA-unqqQ_8n8v_8R0z50m91gLnP_mgjm7LBXtv6dDhX-0ZW6g-P9x3xyf1kfDW_up04MtQtqsMAW2p1znW14D8w1CCx5weu_J4NllUFNRA6apmsumkZr9rkeW4mVUP3tdUaT1qdL4t32AFH7M6BtE7Iu5moZbSSmYomwioJIBehz6MHkMbTL08TmUVHwGaeDWT4)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-white overflow-hidden h-screen w-full flex justify-center items-center">
+<!-- Mobile Frame Wrapper -->
+<div class="relative w-full h-full max-w-[430px] mx-auto bg-background-light dark:bg-background-dark flex flex-col">
+<!-- Status Bar Placeholder (iOS style) -->
+<div class="h-12 w-full flex items-center justify-between px-6 pt-2 shrink-0 z-10">
+<div class="text-sm font-semibold text-white">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-white">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px] text-white">wifi</span>
+<span class="material-symbols-outlined text-[18px] text-white">battery_full</span>
+</div>
+</div>
+<!-- Main Content Area with Scroll -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-6 pt-4 pb-32">
+<!-- Header -->
+<header class="mb-8">
+<h1 class="text-[32px] font-bold leading-[1.1] tracking-tight text-white mb-3">
+                    What content do you want to create?
+                </h1>
+<p class="text-text-secondary text-base font-normal leading-relaxed">
+                    Select all that apply. AI will generate these after each recording.
+                </p>
+</header>
+<!-- Options Grid -->
+<div class="flex flex-col gap-3">
+<!-- Option 1: Selected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border bg-card-dark border-primary shadow-[0_0_0_1px_rgba(59,130,246,0.5)]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[24px]">summarize</span>
+</div>
+<span class="text-white text-base font-medium">Summaries &amp; Key Points</span>
+</div>
+<input checked="" class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+<!-- Option 2: Selected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border bg-card-dark border-primary shadow-[0_0_0_1px_rgba(59,130,246,0.5)]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<span class="text-white text-base font-medium">Study Guides</span>
+</div>
+<input checked="" class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+<!-- Option 3: Selected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border bg-card-dark border-primary shadow-[0_0_0_1px_rgba(59,130,246,0.5)]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[24px]">movie</span>
+</div>
+<span class="text-white text-base font-medium">Short Video Clips</span>
+</div>
+<input checked="" class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+<!-- Option 4: Unselected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border border-card-border bg-card-dark hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 text-text-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">format_quote</span>
+</div>
+<span class="text-white text-base font-medium">Quote Cards</span>
+</div>
+<input class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+<!-- Option 5: Unselected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border border-card-border bg-card-dark hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 text-text-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<span class="text-white text-base font-medium">Full Transcript</span>
+</div>
+<input class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+<!-- Option 6: Unselected -->
+<label class="group relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 border border-card-border bg-card-dark hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 text-text-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<span class="text-white text-base font-medium">Newsletter Content</span>
+</div>
+<input class="custom-checkbox h-6 w-6 rounded border-card-border bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</main>
+<!-- Sticky Footer Area -->
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-background-dark via-background-dark to-transparent pt-12 pb-8 px-6 z-20">
+<!-- Pagination Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-3 pb-6">
+<div class="h-2 w-2 rounded-full bg-card-border"></div>
+<div class="h-2 w-2 rounded-full bg-card-border"></div>
+<div class="h-2 w-8 rounded-full bg-primary transition-all duration-300"></div>
+</div>
+<!-- Main Button -->
+<button class="w-full h-14 bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 text-white font-bold text-lg shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined font-medium">mic</span>
+                Start Recording
+            </button>
+<!-- Home Indicator Placeholder -->
+<div class="h-1 w-32 bg-white/20 rounded-full mx-auto mt-6"></div>
+</div>
+</div>
+</body></html>

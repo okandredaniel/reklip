@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscription Plans - LiveCapture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3c83f6",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0B1120", // Deep Navy from prompt
+              "card-dark": "#111B2E",      // Card BG from prompt
+              "border-dark": "#1E2D45",    // Card Border from prompt
+              "text-secondary": "#7B8BA3", // Subheading from prompt
+              "accent-blue": "#3B82F6",    // Plus Plan
+              "accent-amber": "#F59E0B",   // Pro Plan
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "2.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-accent-blue selection:text-white">
+<div class="mx-auto flex w-full max-w-md flex-col min-h-screen relative overflow-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between px-4 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-center flex-1 pr-10">Choose Your Plan</h1>
+</header>
+<main class="flex-1 flex flex-col px-5 pb-8">
+<!-- Hero Text -->
+<div class="mb-8 text-center pt-2">
+<h2 class="text-[28px] font-extrabold leading-tight tracking-tight mb-3 bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
+                    Unlock unlimited <br/> potential
+                </h2>
+<p class="text-text-secondary text-base font-medium leading-relaxed">
+                    Unlock unlimited recordings and AI-powered content creation
+                </p>
+</div>
+<!-- Plans Stack -->
+<div class="flex flex-col gap-5">
+<!-- Free Plan -->
+<div class="relative flex flex-col gap-5 rounded-2xl border border-border-dark bg-card-dark p-6 transition-transform hover:scale-[1.01]">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Free Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-white">$0</span>
+<span class="text-text-secondary font-medium">/mo</span>
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-border-dark"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center gap-3 text-sm font-medium text-slate-300">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">check_circle</span>
+                            Basic recording (30 mins limit)
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-slate-300">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">check_circle</span>
+                            Local storage only
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-slate-300">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">check_circle</span>
+                            Standard audio quality
+                        </li>
+</ul>
+<button class="mt-2 w-full rounded-full bg-slate-700/50 py-3.5 text-sm font-bold text-slate-400 cursor-not-allowed border border-transparent">
+                        Current Plan
+                    </button>
+</div>
+<!-- Plus Plan -->
+<div class="relative flex flex-col gap-5 rounded-2xl border-2 border-accent-blue bg-card-dark p-6 shadow-[0_0_30px_-10px_rgba(59,130,246,0.3)] transition-transform hover:scale-[1.02]">
+<div class="absolute -top-3 right-6">
+<span class="bg-accent-blue text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Popular</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Plus Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-white">$9.99</span>
+<span class="text-text-secondary font-medium">/mo</span>
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-border-dark"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-blue text-[20px]">check_circle</span>
+                            Unlimited recordings
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-blue text-[20px]">check_circle</span>
+                            Cloud sync across devices
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-blue text-[20px]">check_circle</span>
+                            AI Noise reduction
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-blue text-[20px]">check_circle</span>
+                            HD Audio Export
+                        </li>
+</ul>
+<button class="mt-2 w-full rounded-full bg-accent-blue py-3.5 text-sm font-bold text-white shadow-lg hover:bg-blue-600 transition-colors active:scale-95">
+                        Upgrade to Plus
+                    </button>
+</div>
+<!-- Pro Plan -->
+<div class="relative flex flex-col gap-5 rounded-2xl border-2 border-accent-amber bg-card-dark p-6 transition-transform hover:scale-[1.02]">
+<div class="absolute -top-3 right-6">
+<span class="bg-accent-amber text-black text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Best Value</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Pro Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-white">$19.99</span>
+<span class="text-text-secondary font-medium">/mo</span>
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-border-dark"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-amber text-[20px]">check_circle</span>
+                            Everything in Plus
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-amber text-[20px]">check_circle</span>
+                            AI Summaries &amp; Insights
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-amber text-[20px]">check_circle</span>
+                            Transcription export (TXT, PDF)
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium text-white">
+<span class="material-symbols-outlined text-accent-amber text-[20px]">check_circle</span>
+                            Priority 24/7 support
+                        </li>
+</ul>
+<button class="mt-2 w-full rounded-full border-2 border-accent-amber bg-transparent py-3 text-sm font-bold text-accent-amber hover:bg-accent-amber/10 transition-colors active:scale-95">
+                        Upgrade to Pro
+                    </button>
+</div>
+</div>
+<!-- Footer Disclaimer -->
+<div class="mt-8 text-center pb-6">
+<p class="text-text-secondary text-xs leading-normal">
+                    All plans include a 7-day free trial. Cancel anytime.<br/>
+<a class="underline hover:text-white transition-colors" href="#">Terms of Service</a> applied.
+                </p>
+</div>
+</main>
+</div>
+</body></html>

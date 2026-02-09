@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", /* Updated to user's deep navy */
+                        "card-dark": "#111B2E", /* User specific card color */
+                        "card-border": "#1E2D45", /* User specific border color */
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative mx-auto flex h-full min-h-screen w-full max-w-[430px] flex-col overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Status Bar Placeholder (simulated) -->
+<div class="flex h-14 w-full items-end justify-between px-6 pb-2 text-sm font-medium dark:text-white">
+<span>9:41</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- Top App Bar -->
+<div class="flex items-center justify-between px-6 pb-4 pt-2">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Profile</h2>
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto pb-24 scrollbar-hide">
+<!-- Profile Header Card -->
+<div class="px-5">
+<div class="flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-card-border dark:bg-card-dark">
+<div class="relative">
+<div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 text-xl font-bold text-white shadow-lg shadow-blue-500/20" data-alt="User avatar with initials AS">
+                            AS
+                        </div>
+<div class="absolute bottom-0 right-0 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green-500 dark:border-card-dark"></div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">André Silva</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">andre.silva@example.com</p>
+</div>
+<button class="mt-1 w-full max-w-[140px] rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20">
+                        Edit Profile
+                    </button>
+</div>
+</div>
+<!-- Stats Section -->
+<div class="mt-8 px-6">
+<p class="mb-3 text-xs font-semibold tracking-widest text-slate-500 dark:text-slate-500">STATS</p>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col items-center gap-1 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-card-border dark:bg-card-dark">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">47</span>
+<span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Recordings</span>
+</div>
+<div class="flex flex-col items-center gap-1 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-card-border dark:bg-card-dark">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">32h</span>
+<span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Captured</span>
+</div>
+<div class="flex flex-col items-center gap-1 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-card-border dark:bg-card-dark">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">128</span>
+<span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Markers</span>
+</div>
+</div>
+</div>
+<!-- Your Plan Section -->
+<div class="mt-8 px-5">
+<div class="mb-3 flex items-center justify-between px-1">
+<p class="text-xs font-semibold tracking-widest text-slate-500 dark:text-slate-500">YOUR PLAN</p>
+</div>
+<div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-card-border dark:bg-card-dark">
+<!-- Blue left accent -->
+<div class="absolute bottom-0 left-0 top-0 w-1.5 bg-primary"></div>
+<div class="ml-2 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Plus Plan</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Monthly Billing</p>
+</div>
+<a class="text-sm font-semibold text-primary" href="#">Manage</a>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-500 dark:text-slate-400">Usage period</span>
+<span class="text-slate-900 dark:text-white">14 days remaining</span>
+</div>
+<div class="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700/50">
+<div class="h-full w-[65%] rounded-full bg-primary transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions Section -->
+<div class="mt-8 px-5">
+<p class="mb-3 px-1 text-xs font-semibold tracking-widest text-slate-500 dark:text-slate-500">QUICK ACTIONS</p>
+<div class="flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm dark:border-card-border dark:bg-card-dark">
+<!-- Action Item 1 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-50 text-indigo-500 dark:bg-indigo-500/10 dark:text-indigo-400">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Recording Analytics</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+<!-- Action Item 2 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-50 text-purple-500 dark:bg-purple-500/10 dark:text-purple-400">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Content Templates</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+<!-- Action Item 3 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 dark:bg-emerald-500/10 dark:text-emerald-400">
+<span class="material-symbols-outlined">ios_share</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Export History</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+<!-- Action Item 4 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-500 dark:bg-blue-500/10 dark:text-blue-400">
+<span class="material-symbols-outlined">link</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Connected Accounts</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+<!-- Action Item 5 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 text-amber-500 dark:bg-amber-500/10 dark:text-amber-400">
+<span class="material-symbols-outlined">star</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Rate LiveCapture</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+<!-- Action Item 6 -->
+<button class="group flex w-full items-center gap-4 border-b border-slate-100 p-4 text-left last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-white/5">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-rose-50 text-rose-500 dark:bg-rose-500/10 dark:text-rose-400">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">Send Feedback</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="h-6 w-full"></div> <!-- Extra spacing at bottom of scroll -->
+</div>
+<!-- Bottom Navigation -->
+<div class="absolute bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/90 px-6 pb-6 pt-2 backdrop-blur-md dark:border-slate-800 dark:bg-card-dark/90">
+<div class="flex items-center justify-between px-2">
+<button class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-2xl">mic</span>
+<span class="text-[10px] font-medium">Record</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-2xl">folder_open</span>
+<span class="text-[10px] font-medium">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined text-2xl filled">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+<!-- Home Indicator -->
+<div class="mx-auto mt-4 h-1 w-1/3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+</div>
+</div>
+</body></html>

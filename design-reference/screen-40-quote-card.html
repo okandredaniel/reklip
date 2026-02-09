@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quote Card Customizer</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep Navy as requested
+                        "surface-dark": "#1e293b", // Slightly lighter navy for components
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif-classic": ["Playfair Display", "serif"], // Example font for preview
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-hidden h-screen flex flex-col antialiased">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark z-20 shrink-0">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold leading-tight">Customize Quote</h1>
+<button class="text-primary font-bold text-base px-2 py-1 rounded hover:bg-primary/10 transition-colors">
+            Export
+        </button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<div class="flex flex-col gap-6 p-4 max-w-md mx-auto w-full">
+<!-- Preview Section -->
+<div class="w-full aspect-square relative rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 group">
+<!-- Preview Background -->
+<div class="absolute inset-0 bg-slate-900 bg-gradient-to-br from-[#1e293b] to-[#0f172a] group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Dark navy background with subtle gradient for quote card preview">
+</div>
+<!-- Preview Content -->
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
+<span class="material-symbols-outlined text-white/20 text-4xl mb-4 self-start rotate-180">format_quote</span>
+<p class="text-white text-2xl sm:text-3xl font-serif-classic font-bold leading-tight drop-shadow-md">
+                        The Lord is my shepherd; I shall not want.
+                    </p>
+<div class="mt-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm ring-1 ring-white/20">
+<span class="material-symbols-outlined text-white text-sm">church</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-white font-medium text-sm tracking-wide">Pastor João Silva</span>
+<span class="text-white/60 text-[10px] uppercase tracking-wider">Sunday Service</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Controls Section -->
+<div class="flex flex-col gap-6">
+<!-- Text Control -->
+<div class="space-y-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold tracking-widest uppercase ml-1">Text</h4>
+<div class="relative group">
+<textarea class="w-full bg-white dark:bg-surface-dark border-0 rounded-xl p-4 text-base focus:ring-2 focus:ring-primary shadow-sm text-slate-900 dark:text-white resize-none h-32 leading-relaxed" placeholder="Enter quote text here...">The Lord is my shepherd; I shall not want.</textarea>
+<div class="absolute bottom-3 right-3 text-xs text-slate-400">42/140</div>
+</div>
+</div>
+<!-- Style Control (Horizontal Scroll) -->
+<div class="space-y-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold tracking-widest uppercase ml-1">Style</h4>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar -mx-4 px-4 snap-x">
+<!-- Option 1: Solid Navy (Selected) -->
+<button class="snap-start shrink-0 w-20 h-20 rounded-lg bg-slate-900 border-2 border-primary relative overflow-hidden group">
+<div class="absolute inset-0 flex items-center justify-center bg-primary/20">
+<span class="material-symbols-outlined text-primary text-xl drop-shadow-md">check_circle</span>
+</div>
+<span class="sr-only">Solid Navy</span>
+</button>
+<!-- Option 2: Blurred Photo -->
+<button class="snap-start shrink-0 w-20 h-20 rounded-lg bg-cover bg-center border border-transparent hover:border-slate-500 relative overflow-hidden" data-alt="Blurred mountain landscape background option" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-lwH69m3aagswvVU3tdYMc56ce6kXyJ3UzOy4x5dwy-QrYF7jQsH1kyUh7OBHHWjAQ91xYFyyHkbSKwAhdhGVhBIipjPxHEUbDYWpu3vY4MDf-mBwyNAV_hqGzGntZXUUK5mLHs_x1En6W313d6YbrkL_8u6DLleT_pNVAt-zHFjWFHzmonPFfs56VAGjZXY-FrWRirbwXsV6YjMQUjRLOLQhXabgmqxEujvXQcxZbTZj8AvGTYQhUNjdY4YtIRnxsPQMMM2oTFFn')">
+<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+</button>
+<!-- Option 3: Minimal White -->
+<button class="snap-start shrink-0 w-20 h-20 rounded-lg bg-white border border-slate-200 dark:border-slate-600 relative overflow-hidden">
+</button>
+<!-- Option 4: Gradient Blue -->
+<button class="snap-start shrink-0 w-20 h-20 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 border border-transparent hover:border-slate-500 relative overflow-hidden">
+</button>
+<!-- Option 5: Abstract -->
+<button class="snap-start shrink-0 w-20 h-20 rounded-lg bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80')] bg-cover border border-transparent hover:border-slate-500 relative overflow-hidden" data-alt="Abstract dark texture background option">
+</button>
+</div>
+</div>
+<!-- Layout Control -->
+<div class="space-y-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold tracking-widest uppercase ml-1">Layout</h4>
+<div class="flex bg-white dark:bg-surface-dark rounded-xl p-1 shadow-sm">
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-xl">format_align_left</span>
+</button>
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg bg-primary text-white shadow-md">
+<span class="material-symbols-outlined text-xl">format_align_center</span>
+</button>
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-xl">format_align_right</span>
+</button>
+</div>
+</div>
+<!-- Font Control -->
+<div class="space-y-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold tracking-widest uppercase ml-1">Font</h4>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar -mx-4 px-4 snap-x">
+<!-- Serif Classic (Selected) -->
+<button class="snap-start shrink-0 h-12 px-6 rounded-full bg-primary text-white font-serif-classic text-lg border border-primary shadow-lg shadow-primary/20">
+                            Serif Classic
+                        </button>
+<!-- Sans Modern -->
+<button class="snap-start shrink-0 h-12 px-6 rounded-full bg-white dark:bg-surface-dark text-slate-900 dark:text-slate-300 font-sans text-sm font-medium border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                            Sans Modern
+                        </button>
+<!-- Display Bold -->
+<button class="snap-start shrink-0 h-12 px-6 rounded-full bg-white dark:bg-surface-dark text-slate-900 dark:text-slate-300 font-display font-black tracking-tighter text-sm border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                            DISPLAY BOLD
+                        </button>
+<!-- Handwriting -->
+<button class="snap-start shrink-0 h-12 px-6 rounded-full bg-white dark:bg-surface-dark text-slate-900 dark:text-slate-300 font-serif italic text-sm border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                            Handwriting
+                        </button>
+</div>
+</div>
+<!-- Spacer for scrolling above nav -->
+<div class="h-8"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="shrink-0 bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">library_music</span>
+<span class="text-[10px] font-medium">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="text-[10px] font-medium">Insights</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current font-variation-settings-'FILL'1">edit_document</span>
+<span class="text-[10px] font-medium">Drafts</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+<style>
+        /* Utility for filled icons in Material Symbols */
+        .font-variation-settings-'FILL'1 {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Handle safe area for bottom nav on newer iPhones */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</body></html>

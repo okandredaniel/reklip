@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Microphone Access Permission</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2977f5",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Updated to match request
+                        "secondary-text": "#7B8BA3",
+                        "surface": "#151E32",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-100 dark:bg-black flex items-center justify-center min-h-screen font-display selection:bg-primary/30">
+<!-- Mobile Frame -->
+<div class="relative w-full max-w-[430px] h-[932px] bg-background-light dark:bg-background-dark overflow-hidden shadow-[0_0_80px_-20px_rgba(0,0,0,0.5)] rounded-[60px] border-[8px] border-gray-900 flex flex-col">
+<!-- Status Bar Area (Mock) -->
+<div class="w-full h-[54px] flex items-center justify-between px-8 text-black dark:text-white z-20 shrink-0">
+<span class="text-[17px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[20px] rotate-180">battery_full</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-6 relative z-10 w-full max-w-[360px] mx-auto gap-10">
+<!-- Icon Container -->
+<div class="flex items-center justify-center">
+<div class="w-24 h-24 rounded-full bg-surface dark:bg-[#151E32] flex items-center justify-center ring-1 ring-white/5 shadow-2xl shadow-primary/10">
+<span class="material-symbols-outlined text-primary text-[40px] filled">mic</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center text-center gap-4">
+<h1 class="text-gray-900 dark:text-white text-[32px] font-bold leading-tight tracking-tight">
+                    Microphone Access
+                </h1>
+<p class="text-secondary-text text-base font-normal leading-relaxed max-w-[320px]">
+                    LiveCapture needs your microphone to record meeting audio and voice notes. Audio never leaves your device until you choose to process it.
+                </p>
+</div>
+<!-- Feature Pills -->
+<div class="flex flex-wrap justify-center gap-3">
+<div class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface/50 border border-white/5 dark:border-white/10 backdrop-blur-sm">
+<span class="text-base">🎙️</span>
+<span class="text-sm font-medium text-gray-700 dark:text-gray-200">Background recording</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface/50 border border-white/5 dark:border-white/10 backdrop-blur-sm">
+<span class="text-base">🔒</span>
+<span class="text-sm font-medium text-gray-700 dark:text-gray-200">Private by default</span>
+</div>
+</div>
+</div>
+<!-- Bottom Actions Area -->
+<div class="w-full px-6 pb-12 pt-6 flex flex-col gap-6 shrink-0 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/90 dark:via-background-dark/90 to-transparent z-20">
+<!-- Buttons -->
+<div class="flex flex-col gap-4 w-full">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all rounded-full flex items-center justify-center shadow-lg shadow-primary/25 group">
+<span class="text-white text-[17px] font-bold tracking-wide group-hover:tracking-wider transition-all">Allow Microphone</span>
+</button>
+<button class="w-full h-10 flex items-center justify-center text-secondary-text hover:text-gray-900 dark:hover:text-white transition-colors">
+<span class="text-[17px] font-medium">Not now</span>
+</button>
+</div>
+<!-- Pagination Dots -->
+<div class="flex w-full items-center justify-center gap-2.5 pt-2">
+<div class="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_rgba(41,119,245,0.5)]"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+</div>
+<!-- Home Indicator Safe Area -->
+<div class="w-full flex justify-center pt-2">
+<div class="w-[134px] h-[5px] bg-black/20 dark:bg-white/20 rounded-full"></div>
+</div>
+</div>
+<!-- Background Gradient Effect -->
+<div class="absolute top-0 left-0 w-full h-[50%] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none z-0"></div>
+</div>
+</body></html>

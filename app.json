@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "LiveCapture",
+    "slug": "livecapture",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "livecapture",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.livecapture.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"],
+        "NSMicrophoneUsageDescription": "LiveCapture needs your microphone to record audio.",
+        "NSCameraUsageDescription": "LiveCapture needs your camera to capture photos and videos during recordings.",
+        "NSPhotoLibraryUsageDescription": "LiveCapture saves captured photos to your library."
+      }
+    },
+    "android": {
+      "package": "com.livecapture.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B1120"
+      },
+      "permissions": [
+        "RECORD_AUDIO",
+        "CAMERA",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_MICROPHONE",
+        "POST_NOTIFICATIONS",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

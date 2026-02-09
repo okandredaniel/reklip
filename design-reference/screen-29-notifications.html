@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LiveCapture Notifications</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8", // Fallback, but we are designing specifically for the dark navy context
+                        "background-dark": "#0B1120", // Deep Navy
+                        "card-bg": "#111B2E",
+                        "card-border": "#1E2D45",
+                        "text-muted": "#90a7cb",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display antialiased text-white selection:bg-primary/30">
+<!-- Mobile Container (Simulating App View) -->
+<div class="relative mx-auto flex min-h-screen w-full max-w-md flex-col overflow-hidden bg-background-dark shadow-2xl">
+<!-- Status Bar Simulator -->
+<div class="flex h-12 w-full items-end justify-between px-6 pb-2 text-white">
+<div class="text-sm font-semibold">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between bg-background-dark/80 px-4 py-4 backdrop-blur-md">
+<h1 class="text-2xl font-bold tracking-tight text-white">Notifications</h1>
+<button class="text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                Mark all read
+            </button>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 pb-20 scrollbar-hide">
+<!-- Section: TODAY -->
+<div class="mb-6">
+<h3 class="mb-3 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted">Today</h3>
+<div class="flex flex-col gap-3">
+<!-- Notification Card 1: Unread -->
+<div class="group relative flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 shadow-sm transition-all hover:border-primary/30 hover:shadow-md active:scale-[0.99]">
+<!-- Icon -->
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-semibold text-white leading-tight">Sunday Sermon processed</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">2h ago</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-400">AI analysis complete. 12 clips generated from your latest upload.</p>
+</div>
+<!-- Unread Dot -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<div class="h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(60,131,246,0.6)]"></div>
+</div>
+</div>
+<!-- Notification Card 2: Unread -->
+<div class="group relative flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 shadow-sm transition-all hover:border-primary/30 hover:shadow-md active:scale-[0.99]">
+<!-- Icon -->
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
+<span class="material-symbols-outlined">movie_filter</span>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-semibold text-white leading-tight">Video clips ready</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">5h ago</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-400">Your export is ready for download. Tap to view your library.</p>
+</div>
+<!-- Unread Dot -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<div class="h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(60,131,246,0.6)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: YESTERDAY -->
+<div class="mb-6">
+<h3 class="mb-3 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted">Yesterday</h3>
+<div class="flex flex-col gap-3">
+<!-- Notification Card 3: Read -->
+<div class="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 opacity-90 transition-all hover:opacity-100 active:scale-[0.99]">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400">
+<span class="material-symbols-outlined">insights</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-medium text-slate-200 leading-tight">Weekly Summary</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">1d ago</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-500">View your engagement stats and see how your content performed.</p>
+</div>
+</div>
+<!-- Notification Card 4: Read -->
+<div class="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 opacity-90 transition-all hover:opacity-100 active:scale-[0.99]">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-medium text-slate-200 leading-tight">Pro Tip</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">1d ago</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-500">How to improve audio capture in echo-prone environments.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: EARLIER -->
+<div class="mb-6">
+<h3 class="mb-3 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted">Earlier</h3>
+<div class="flex flex-col gap-3">
+<!-- Notification Card 5: Read -->
+<div class="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 opacity-80 transition-all hover:opacity-100 active:scale-[0.99]">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-700/30 text-slate-400">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-medium text-slate-300 leading-tight">Upload complete</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">Oct 22</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-500">File 2023-10-22.mp4 was successfully uploaded to the cloud.</p>
+</div>
+</div>
+<!-- Notification Card 6: Read -->
+<div class="group flex items-start gap-4 rounded-xl border border-card-border bg-card-bg p-4 opacity-80 transition-all hover:opacity-100 active:scale-[0.99]">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-pink-500/10 text-pink-500">
+<span class="material-symbols-outlined">waving_hand</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-start justify-between">
+<h4 class="text-sm font-medium text-slate-300 leading-tight">Welcome to LiveCapture!</h4>
+<span class="ml-2 text-xs text-text-muted shrink-0">Oct 20</span>
+</div>
+<p class="mt-1 text-xs leading-relaxed text-slate-500">We're glad you're here. Start capturing your first moment.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Placeholder (Hidden but good practice for robustness) -->
+<!-- 
+            <div class="flex flex-col items-center justify-center py-12 text-center opacity-0 hidden">
+                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-card-bg border border-card-border mb-4">
+                    <span class="material-symbols-outlined text-text-muted text-2xl">notifications_off</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white">No notifications</h3>
+                <p class="text-sm text-text-muted">You're all caught up!</p>
+            </div> 
+            -->
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="flex h-[88px] w-full items-start justify-around border-t border-card-border bg-[#0B1120]/95 pt-3 backdrop-blur-lg pb-8">
+<button class="flex flex-col items-center gap-1 opacity-50 hover:opacity-100">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-50 hover:opacity-100">
+<span class="material-symbols-outlined text-2xl">folder_open</span>
+<span class="text-[10px] font-medium">Library</span>
+</button>
+<button class="group relative -mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<div class="relative">
+<span class="material-symbols-outlined fill-1 text-2xl">notifications</span>
+<span class="absolute -right-0.5 top-0 h-2 w-2 rounded-full bg-red-500 ring-2 ring-[#0B1120]"></span>
+</div>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-50 hover:opacity-100">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-1 left-1/2 h-1 w-32 -translate-x-1/2 rounded-full bg-white/20"></div>
+</div>
+</body></html>

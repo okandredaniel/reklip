@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Interactive Transcript</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "secondary": "#7B8BA3", // Slate Grey
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep Navy
+                        "surface-dark": "#151e32",
+                        "menu-bg": "#111B2E", // Specific navy for the menu
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        .safe-area-top {
+            padding-top: max(env(safe-area-inset-top), 44px);
+        }
+        .safe-area-bottom {
+            padding-bottom: max(env(safe-area-inset-bottom), 34px);
+        }
+        .selection-handle-start {
+            position: absolute;
+            top: -4px;
+            left: -2px;
+            width: 4px;
+            height: calc(100% + 8px);
+            background-color: #3B82F6;
+            border-radius: 2px;
+        }
+        .selection-handle-start::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -3px;
+            width: 10px;
+            height: 10px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+        }
+        .selection-handle-end {
+            position: absolute;
+            top: -4px;
+            right: -2px;
+            width: 4px;
+            height: calc(100% + 8px);
+            background-color: #3B82F6;
+            border-radius: 2px;
+        }
+        .selection-handle-end::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -3px;
+            width: 10px;
+            height: 10px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+        }.highlight-selection {
+            background-color: rgba(59, 130, 246, 0.3);
+            color: white;
+            position: relative;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-radius: 4px;
+            padding: 2px 0;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden h-screen flex flex-col text-white">
+<div class="fixed top-0 left-0 right-0 z-50 pointer-events-none safe-area-top flex justify-between px-6 items-start text-white text-xs font-semibold">
+<span class="pl-2 pt-1">9:41</span>
+<div class="flex gap-1.5 pt-1 pr-2">
+<span class="material-symbols-outlined text-[16px] leading-none">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px] leading-none">wifi</span>
+<span class="material-symbols-outlined text-[16px] leading-none">battery_full</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col relative w-full max-w-md mx-auto h-full overflow-hidden bg-background-dark shadow-2xl">
+<header class="bg-background-dark/95 backdrop-blur-md sticky top-0 z-40 border-b border-white/5 safe-area-top pb-2 opacity-50 pointer-events-none">
+<div class="flex items-center justify-between px-4 pt-2 h-12">
+<button class="flex items-center justify-center size-10 text-white active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-white text-[17px] font-semibold tracking-tight text-center flex-1">Sermon Transcript</h1>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center size-10 text-white active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="text-primary text-[17px] font-medium active:opacity-70 transition-opacity pl-1">
+                    Edit
+                </button>
+</div>
+</div>
+<div class="px-4 pb-3 pt-1">
+<div class="flex items-center gap-3 bg-surface-dark rounded-xl p-2 px-3 border border-white/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0 size-8">
+<span class="material-symbols-outlined text-lg">graphic_eq</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="text-white text-sm font-medium leading-none">Playing at 1.5x</p>
+<span class="text-secondary text-xs">12:45 remaining</span>
+</div>
+<div class="flex items-end gap-[2px] h-3 mt-1.5 w-full opacity-60">
+<div class="w-1 bg-primary h-[40%] rounded-full"></div>
+<div class="w-1 bg-primary h-[70%] rounded-full"></div>
+<div class="w-1 bg-primary h-[100%] rounded-full"></div>
+<div class="w-1 bg-primary h-[60%] rounded-full"></div>
+<div class="w-1 bg-primary h-[30%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[40%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[60%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[20%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[50%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[30%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[40%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[60%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[20%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[50%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[30%] rounded-full"></div>
+</div>
+</div>
+<button class="shrink-0 text-white flex items-center justify-center size-8">
+<span class="material-symbols-outlined filled text-2xl">pause_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar relative px-4 pb-32 pt-4">
+<div class="flex gap-4 mb-8 group opacity-40">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                04:15
+            </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+                And that is exactly why we need to consider the context of the passage before making any assumptions.
+            </div>
+</div>
+<div class="flex gap-4 mb-8 group relative z-10">
+<div class="absolute -top-16 left-0 right-0 mx-auto w-max z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+<div class="bg-menu-bg border border-primary rounded-xl shadow-2xl shadow-black/80 flex items-center p-1.5 gap-1">
+<button class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors group/btn">
+<span class="material-symbols-outlined text-[20px] text-white">format_quote</span>
+<span class="text-[9px] font-medium text-white leading-none">Quote Card</span>
+</button>
+<div class="w-px h-6 bg-white/10"></div>
+<button class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors group/btn">
+<span class="material-symbols-outlined text-[20px] text-white">movie</span>
+<span class="text-[9px] font-medium text-white leading-none">Video Clip</span>
+</button>
+<div class="w-px h-6 bg-white/10"></div>
+<button class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors group/btn">
+<span class="material-symbols-outlined text-[20px] text-white">edit_note</span>
+<span class="text-[9px] font-medium text-white leading-none">Note</span>
+</button>
+<div class="w-px h-6 bg-white/10"></div>
+<button class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors group/btn">
+<span class="material-symbols-outlined text-[20px] text-white">share</span>
+<span class="text-[9px] font-medium text-white leading-none">Share</span>
+</button>
+</div>
+<div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 size-3 bg-menu-bg border-r border-b border-primary rotate-45"></div>
+</div>
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-primary tabular-nums text-right select-none opacity-50">
+                04:30
+            </div>
+<div class="text-[17px] leading-[1.6] text-white relative">
+<span class="relative inline box-decoration-clone bg-primary/30 text-white rounded px-0.5 py-0.5">
+<span class="absolute -left-[2px] -top-1 w-[2px] h-[120%] bg-primary rounded-full select-none pointer-events-none">
+<span class="absolute -top-1.5 -left-[4px] size-2.5 bg-primary rounded-full shadow shadow-black/50"></span>
+</span>
+                    It isn't just about the words on the page, but the spirit in which they were written.
+<span class="absolute -right-[2px] -top-1 w-[2px] h-[120%] bg-primary rounded-full select-none pointer-events-none">
+<span class="absolute -bottom-1.5 -left-[4px] size-2.5 bg-primary rounded-full shadow shadow-black/50"></span>
+</span>
+</span>
+</div>
+</div>
+<div class="flex gap-4 mb-8 group opacity-40">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                04:45
+            </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+                Moving on to the next point, let's look at verse ten where the tone shifts dramatically. Often we miss this subtle nuance in standard translations.
+            </div>
+</div>
+<div class="flex gap-4 mb-8 group opacity-40">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                05:02
+            </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+                The historical backdrop of ancient civilizations often provides the key. It unlocks the meaning hidden between lines.
+            </div>
+</div>
+<div class="h-20"></div>
+<div class="fixed bottom-24 right-6 z-30 opacity-30 pointer-events-none">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-4 py-2.5 shadow-lg shadow-primary/30 active:scale-95 transition-all">
+<span class="text-sm font-semibold">Jump to Current</span>
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</main>
+<nav class="bg-[#0B1120]/95 backdrop-blur-xl border-t border-white/5 safe-area-bottom opacity-50 pointer-events-none">
+<div class="flex items-center justify-between px-2 pt-2 pb-1">
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">library_music</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Library</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">insights</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Insights</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">description</span>
+</div>
+<span class="text-[10px] font-medium text-white">Transcript</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">edit_note</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Drafts</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<div class="size-6 rounded-full overflow-hidden border border-secondary/30">
+<img alt="User profile avatar showing a smiling person" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMMjFA0IwJcI_0d84vV_WwHshoBvUkm-XAF2YEU2W2BpCPzvkIBUfkH0I6LvWO2SGfkALBf64fDlbEkzEOwErxnRc8L0EyqWB8_YZdAFrC-B893hdObCuuOkHmtIpvqWsgaJxkBcDIWUi7YuknOI3EUILQYGFo0HNNlO5OkGQ4JI7yGtaTYb4Y2e9-6ODgw17oZU4AuM_kqoDOsJr7FhzuQ18JLP9f9Y2ARvKkDKcm5IPrcGXQpFEvtFR3Mga79nh6IWNZvhJmNTxU"/>
+</div>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>

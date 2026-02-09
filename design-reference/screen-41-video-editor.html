@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Snippet Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8", // Not used as requested strict dark theme for this screen
+                        "background-dark": "#0B1120", // Deep navy as requested
+                        "surface": "#162032",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased overflow-hidden selection:bg-primary/30">
+<!-- Main Container: iPhone 15 Pro Mockup context or full screen mobile view -->
+<div class="relative flex h-screen w-full flex-col mx-auto max-w-md bg-background-dark">
+<!-- Header -->
+<header class="flex items-center justify-between px-4 pt-14 pb-4 bg-background-dark z-20">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-white">Edit Video Snippet</h1>
+<button class="flex items-center justify-center px-2 h-10 rounded-full text-primary font-bold text-base hover:text-primary/80 transition-colors">
+                Save
+            </button>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto no-scrollbar pb-8">
+<!-- Video Preview Area (9:16 Aspect Ratio) -->
+<div class="w-full flex justify-center px-6 py-2 shrink-0">
+<div class="relative w-full aspect-[9/16] max-h-[55vh] rounded-[2rem] overflow-hidden bg-surface shadow-2xl border border-white/5 ring-1 ring-white/5">
+<!-- Video Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Vertical video of a person speaking on stage with dramatic lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtQceEpshMsCPIoFQEMSskdpj43UTF2tN2cFowAz_2tCfUs4IFC9CHQYOOb0H95noNE7wrsARdX280c6uWKCxBGTkaRYURfinkC2lO-UKhsdiHAfJBdVm8fGLIxdfyxjUysqdf-HMCEKbGPhHGcZxhsGzOl36ZSd3EQIuHAA9QDCBMFUoKsY8xjB6GpyR13Dq_EUsP0p69g0c8ykacig9QVrcCFe2Bh0bVzE63Ck2fOFlc40P0f6ySjrJBdbY1DZHgLVQFTB-RB8Ha');"></div>
+<!-- Overlay Gradient for legibility -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+<!-- Captions Preview Overlay -->
+<div class="absolute bottom-20 left-0 right-0 px-6 text-center">
+<p class="text-2xl font-bold text-white drop-shadow-md leading-tight">
+<span class="bg-primary px-2 py-0.5 rounded-lg box-decoration-clone">Everything changes</span><br/>
+<span class="bg-primary px-2 py-0.5 rounded-lg box-decoration-clone mt-1 inline-block">when you believe.</span>
+</p>
+</div>
+<!-- Play Button -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="group flex items-center justify-center w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-white ml-1" style="font-size: 32px; font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Controls Section -->
+<div class="flex flex-col gap-6 px-4 pt-6">
+<!-- Trim Section -->
+<div class="space-y-3">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase">Trim</h3>
+<div class="flex gap-4 text-xs font-medium text-slate-400 font-mono">
+<span class="text-white">00:15</span>
+<span>/</span>
+<span>01:00</span>
+</div>
+</div>
+<!-- Timeline/Filmstrip -->
+<div class="relative h-16 w-full rounded-xl bg-surface overflow-hidden group select-none touch-none">
+<!-- Filmstrip Images (Simulated) -->
+<div class="absolute inset-0 flex items-center opacity-60 grayscale blur-[1px]">
+<!-- Using a repeated background pattern or multiple divs to simulate frames -->
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmGA1ZkkQqmY9ikbUtPkNYWUOMLsFfkB6xpYIjISSyOcGKgNz7ulrW4rC2P3S6MOYHYh24iHO4RIibvbOFjgpDDfop9PHEBUAPw79_xMz9bKqbLrYpBx2viJ-5IvWV45MpXnpjrEIYFHOEDGNAD_bJ0YTOqN2TvETHxs2z6FvpKuxGa5MqUOie5FdkV9YUv8vJjlOQqLCEXt6zoK_NQBcgQS2v47rg4mllO5UCqJBWskMKYeW76agchf_-pai5c07HAIeBIZp0neM3')"></div>
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjxA__4aQkMOgxFDEH4D7PgXfqX0zVthCzCtd7vak-AqiaH0Ag8ebqioFYYX9p4kOh7s9Z97Mn-bnPNW3m855iWaLu4C-f5d3hFF1e9TetINhVSR5z2ZNGeeopmOBTBV14ZP6XIlqUrXg4j3uiESRgTVckg3M0mzeT-lnnWckc9om2y5l7HiqbQ6zeyMMWoRrrgvNQCeU9edAT9tAc5Qg-y0bKJs2-oeJIfL5Oie8yaBYxC_NmiipjKmM_YHVCcZgJILXI5D1CXk6P')"></div>
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-KXFoooIQmqMbeS2k4N-AgakvgkMLh3d9Gpu6jCKh_AMusUSMpF_QnzFmGwJXyMABDForGv_8u-EEItZ8v-PsRi50MMtTSfHHcqXuGzlA_yuAvp9yrSVXLs4i-1LsY2q4w5l9OpBmcHRDm6_FyaX7rLLgZueCyyWIAfd6-bw4-fHxzWssoITk9lh0MXCPyLR1Xc_T9Baq8RZqKvNnHsB7jSXDuwRvF2fFlmmIP7TkipcEEouabrxcfk_L5Hd7tPQy72tqyQQzxflX')"></div>
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBypq9hKYqJc0XDkqMldrRtgYyxbgN9Wwn-EiNDHd5JeqN9MFCzEokPpM21yCfrKlIepHRnGnMfItnJ0uP1hqdhi7nxFYJw3H0jyVxiR4Ll-vI2vpsGcyg32igR8XNSOX4rk9fs_G-DNbRqUYp_a5YqATajLwKucEFoT03rox0hceaqVwRFVrjMYBefZj6FZAMyZ_G92VWROwVpwxGrhToTuQlyHf1qadiy6Bs8GiOu7aEeHhVLu8nyFcshSVchgPFUoC3-oGtYv72L')"></div>
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 5" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyz1SNnz9EByk-EmwqsuJPwgaDQsZPkSAXhTUv36peq593KvilKZ77uo2AFxw-tJdCB_TwMUiq19NOMp-op1DSZ_77lkLHApa7e1EWl_GwmkzLpT76OwGIavuI3A-KdLf8p_GzqK6FgnEDHd_2hXr6HkPnvc-37zKsTz-MfzJ2tOqpb8tL-YUP1I9KntTUPSWmjH90aK_thHtnQoyVjo15EbQ06ZPRDvOL0pokjm_WCxnkiKCnpQeLvV4yO1jjSosiD8-KlIuKRQCT')"></div>
+<div class="h-full w-1/6 bg-cover bg-center border-r border-black/30" data-alt="Video frame 6" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbPf_JrNXm721NrFlHcFT-DcExnM7fM4qDE9JuZDokXIQsI7GQQxKPAOisYQFNhkcCeUBcmc2C0aqbXYuRrBApBkWHaMsiOvbJRMrbtBSG8R0w6uMh5elryvCam8hkaLdcOiohvLZ7vM3af5QkZBApc_wM8asfgs4v2KI9_I63XMM3oYQFMAw_TzdqaZcAGLxvzaADUkWF8koWSYITxEov7KnI7gy-6KLgBV-bzfJO5EPy_335XIatqL8GtKIEI7Z57dvdIs_kVdTj')"></div>
+</div>
+<!-- Trim Handles / Selection Area -->
+<!-- The selection is the clear area, the rest is dimmed (already done by opacity above) -->
+<div class="absolute top-0 bottom-0 left-[20%] right-[20%] z-10">
+<!-- Selected Content (Clearer) -->
+<div class="absolute inset-0 overflow-hidden">
+<div class="absolute top-0 left-[-25%] h-full w-[166%] flex items-center">
+<div class="h-full w-[10%] bg-cover bg-center border-r border-black/30" data-alt="Video frame 2 active" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfCv40LbIw6vK5Eh82JwMz39aPcbpGKXweKqgAJZmoakqBe2Yr6lEIeOmwiOZOBeWGKH-X0CvERZKtJKXylksXRrMc3VNfm0ufPv35j1O5Cz74db8wBpZrXU-ldOfbzo-jMz0l_Ct_OzBOqmc4t3BYubJCkLMIyWwrBS0cmw1rc6ko8jawvot1Zz7dqVZF_AzkfiSbGhULO13P6MwxIDXanhMxeAMmA2SfR4BHs-Y7D1lCQSHxA0R4IdTtK6c4eyjfFnKTmA3u9RXw')"></div>
+<div class="h-full w-[10%] bg-cover bg-center border-r border-black/30" data-alt="Video frame 3 active" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbPYZADwC6_JV42U2hCagx07ZmMGILYonQBioOHmkrmh9bexV9pm8-4fG0tgG09Di0yOpbR5YfazXPLDYfs1anDGuSKOy54njqpdx77BVZU_4ekNimp-bthSzYb9EkVpAdHhI3sajxEzCTea7bQdM2FfONZGhE-bUwV_r6qx7G_Mlx_XCZIUlNYEtlAt-BUiW30rNLhCEpMCDu20nO854t8wcpvyefybwH1v9JQZ_hbNd1f9RV0BLf4YE0G2IDVhkl41k74VzSFoIq')"></div>
+<div class="h-full w-[10%] bg-cover bg-center border-r border-black/30" data-alt="Video frame 4 active" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJQuKb7Y4yBO4Hgx49J9o8crHjJH3IkImJjI5xvzZ07_k55cIe0DxsrX46bz0Nde0s0lF-Xe27vS4CDaWl68dBtsOqMRGsxPhi18y3oXW5nn72sEgQd6TWsrcKsG2UMdMUUt-ldv_oHaje5iUxcKi4HLfdbXoigUdsIh-x45i6fHP0JZeEcNQzQoO9R8QvzWv5ewS7BDCvCVz5ATCY0Dq6qgUNhM6MJOHqODsCzCEOcz22aZUOCayFQugoMdldczSkLcbEsA7Fvo1n')"></div>
+<div class="h-full w-[10%] bg-cover bg-center border-r border-black/30" data-alt="Video frame 5 active" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNKDELRcisJOoepiELf47JJ8OX4kW4lWZOJZMz2xu6RhtOr1fH9lwZMpej3v5Ki0lqBY8qZIJ5f5Tfr1jueoXBJTZu8IViXHq0Z1ssblO9LPjpyp6A2fd5IB75L8BIrE3rZEx_XpJMoEDzzdwSM2eOM1sOnPLM14QHRqEg9esdFfs31WxCkSsPC8f3UOtHfyZh3-89qK9bkvcIko3bh0JGYxxtHBizkNY7hLiCLL77SGR4y0ovCWfS97Xw0OhcfVouboPh2ywzKvVm')"></div>
+</div>
+</div>
+<!-- Border Frame -->
+<div class="absolute inset-0 border-[3px] border-primary rounded-lg pointer-events-none shadow-[0_0_15px_rgba(60,131,246,0.3)]"></div>
+<!-- Left Handle -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-8 w-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-ew-resize">
+<div class="w-0.5 h-4 bg-slate-400 rounded-full"></div>
+</div>
+<!-- Right Handle -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-8 w-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-ew-resize">
+<div class="w-0.5 h-4 bg-slate-400 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Overlays Section -->
+<div class="space-y-3">
+<h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase px-2">Overlays</h3>
+<div class="flex flex-wrap gap-3">
+<!-- Captions Toggle (Active) -->
+<button class="flex items-center gap-2 pl-3 pr-4 py-2.5 rounded-full bg-primary text-white text-sm font-semibold transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">closed_caption</span>
+                            Captions
+                        </button>
+<!-- Transcript Toggle (Active Secondary) -->
+<button class="flex items-center gap-2 pl-3 pr-4 py-2.5 rounded-full bg-surface border border-white/10 text-white hover:bg-white/5 text-sm font-semibold transition-all">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                            Transcript
+                        </button>
+<!-- Branding Toggle (Inactive) -->
+<button class="flex items-center gap-2 pl-3 pr-4 py-2.5 rounded-full bg-surface border border-white/5 text-slate-400 hover:text-white hover:bg-white/5 text-sm font-semibold transition-all">
+<span class="material-symbols-outlined text-[20px]">branding_watermark</span>
+                           Branding
+                       </button>
+</div>
+</div>
+<!-- Caption Style Picker -->
+<div class="space-y-3 pb-8">
+<h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase px-2">Caption Style</h3>
+<div class="relative w-full overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
+<div class="flex gap-4 w-max">
+<!-- Style 1: Bold Blue (Selected) -->
+<button class="relative flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-surface border-2 border-primary shadow-[0_0_15px_rgba(60,131,246,0.2)] overflow-hidden shrink-0 group">
+<div class="absolute inset-0 bg-cover opacity-30" data-alt="Abstract dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwRIWcTNVu6lZ8-lu6sp6RtSyXTgQ9qdiXXN93Hp0TQYXWurciXZTkDqxs-Oe3fIURMj63nw_Gq-Fxc-rUNqichNkdD36zfGHulbcpZSgApi3W-XFGh_OvB3oYYk3h0u-2ncvmRvihX0l-NeY0zLcJzpX0LtP2L7QfvONlXL0_7RMv_PwaMmoDx6Q5NxUzzIYro40HqMxX6ysV9SeiFu7f87GUt7jcS0_warjEbRJwJ3hO2dqUXmoupAV8zScHAPngtlz2yqBBS2tx')"></div>
+<div class="relative z-10 flex flex-col items-center gap-1">
+<span class="text-sm font-bold text-white bg-primary px-2 rounded">Abc</span>
+<span class="text-[10px] text-primary font-medium mt-1">Bold Blue</span>
+</div>
+<!-- Checkmark for selected state -->
+<div class="absolute top-1 right-1 bg-primary rounded-full p-0.5">
+<span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+</div>
+</button>
+<!-- Style 2: Minimal White -->
+<button class="relative flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-surface border border-white/10 overflow-hidden shrink-0 group hover:border-white/30 transition-colors">
+<div class="absolute inset-0 bg-cover opacity-30 grayscale" data-alt="Abstract dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEZMGNx6svIhwsqjFE9jE_w3qYmzDcWIZ62D9Yt8uSRaSUCLvkA0GFxCwb7uK_A5D9hpKjnhRFNJ5b1nY4xHqCbMdmM5xE2ogJnfA86XffovQG0tDvgpSG68jF1XXeuHZBcdLsQ2KwNhU1o3E66rjcbINKuP2n0lSCb4PWBH9CNsw6QHHH1vBaJeQj-qApIvRcf6j6tGGqzQxr-LUtDS8qzxi6xGa2Ex24n2FNL49FLyUoKq5-wowL_L-RZ39SuRGh-hkYEIbLzTqB')"></div>
+<div class="relative z-10 flex flex-col items-center gap-1">
+<span class="text-sm font-medium text-white px-2">Abc</span>
+<span class="text-[10px] text-slate-400 font-medium mt-1 group-hover:text-white transition-colors">Minimal</span>
+</div>
+</button>
+<!-- Style 3: Neon -->
+<button class="relative flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-surface border border-white/10 overflow-hidden shrink-0 group hover:border-white/30 transition-colors">
+<div class="absolute inset-0 bg-cover opacity-30" data-alt="Abstract dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxVBoZ3QMuOQXWpBWZ3-w6OtwiNzjAYKqhHAALBiq6yMRGTyiH-xLcGsgVzFTP0yv3SSORIJJB8pJYJ9rWX-BK-oqXHerooRBKbVt5cVlO43HRKwi7AgBennF3E55dG6csAFx80ryMbDgTEQCowrSCgDA-0RIaTmV0V_1q6E9ILX168b8xNBCEmVtutTafdnURXSKCKJ-um5z1hEP_cNgUWlfvfFNoHkB7E__MrRj4fRrXGx2I7EnmQ5eY5M8PUK6kNzwazy35i7Td')"></div>
+<div class="relative z-10 flex flex-col items-center gap-1">
+<span class="text-sm font-bold text-green-400 px-2 drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]" style="font-family: monospace;">Abc</span>
+<span class="text-[10px] text-slate-400 font-medium mt-1 group-hover:text-white transition-colors">Neon</span>
+</div>
+</button>
+<!-- Style 4: Classic Box -->
+<button class="relative flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-surface border border-white/10 overflow-hidden shrink-0 group hover:border-white/30 transition-colors">
+<div class="absolute inset-0 bg-cover opacity-30 grayscale" data-alt="Abstract dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBevspJoSHqRTWd4oDvrMBeu7ZKkT175d7xV-UOqx37_jMgv0SJUuMgse7HmwkZ-SZOrUnWbOGPeZ2yk2a3YL9ItcxHZLUNDXellHXtIyZFtL2Z6uFGkECJXtJXyw6NBwKCH0FtiEbarFVXb6JfCQsfQM93EQkJaL9uo4DpmNEm_7bKZAM2LnKD3n5cVCPTibM8e80lUZmISyBL9ayYhHa1sK5OWjFZoWq1rcMBEEA0ejpSFg2RtYN4nWGjE4L0FdMlq0OfpTBk9-H0')"></div>
+<div class="relative z-10 flex flex-col items-center gap-1">
+<span class="text-sm font-bold text-black bg-white px-1">Abc</span>
+<span class="text-[10px] text-slate-400 font-medium mt-1 group-hover:text-white transition-colors">Classic</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Home Indicator Safe Area (iOS) -->
+<div class="h-1 bg-background-dark w-full shrink-0"></div>
+</div>
+<style>
+        /* Custom scrollbar hiding for horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

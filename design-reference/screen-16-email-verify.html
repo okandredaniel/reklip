@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Email OTP Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", 
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", 
+                        "surface-dark": "#111B2E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom glow effect for the icon */
+        .icon-glow {
+            box-shadow: 0 0 60px -15px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Mobile Container mimicking iPhone frame constraint -->
+<div class="w-full max-w-sm h-full flex flex-col relative">
+<!-- Header / Back Navigation -->
+<div class="flex items-center justify-between py-4 mb-8">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="flex-1"></div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-2xl">help</span>
+</button>
+</div>
+<!-- Hero Section -->
+<div class="flex flex-col items-center justify-center mb-10">
+<!-- Mail Icon with Glow -->
+<div class="relative mb-8">
+<div class="w-24 h-24 bg-surface-dark rounded-full flex items-center justify-center icon-glow border border-white/5 relative z-10">
+<span class="material-symbols-outlined text-5xl text-primary">mail</span>
+</div>
+<!-- Checkmark Badge -->
+<div class="absolute -bottom-1 -right-1 z-20 bg-green-500 rounded-full p-1.5 border-4 border-[#0B1120] flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-base font-bold">check</span>
+</div>
+<!-- Decorative blurred background blob -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 blur-3xl rounded-full -z-0"></div>
+</div>
+<h1 class="text-3xl font-bold text-center mb-3 tracking-tight">Check Your Email</h1>
+<p class="text-slate-400 text-center text-base leading-relaxed px-4">
+                We sent a verification link to <br/>
+<span class="text-white font-semibold">andre@email.com</span>
+</p>
+</div>
+<!-- OTP Input Section -->
+<div class="w-full mb-8">
+<form class="flex justify-center gap-4" onsubmit="event.preventDefault()">
+<input autofocus="" class="w-14 h-16 text-center text-2xl font-bold bg-surface-dark border-2 border-transparent rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-all placeholder-white/20 caret-primary text-white" inputmode="numeric" maxlength="1" pattern="[0-9]*" placeholder="-" type="text"/>
+<input class="w-14 h-16 text-center text-2xl font-bold bg-surface-dark border-2 border-transparent rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-all placeholder-white/20 caret-primary text-white" inputmode="numeric" maxlength="1" pattern="[0-9]*" placeholder="-" type="text"/>
+<input class="w-14 h-16 text-center text-2xl font-bold bg-surface-dark border-2 border-transparent rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-all placeholder-white/20 caret-primary text-white" inputmode="numeric" maxlength="1" pattern="[0-9]*" placeholder="-" type="text"/>
+<input class="w-14 h-16 text-center text-2xl font-bold bg-surface-dark border-2 border-transparent rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-all placeholder-white/20 caret-primary text-white" inputmode="numeric" maxlength="1" pattern="[0-9]*" placeholder="-" type="text"/>
+</form>
+</div>
+<!-- Resend Timer -->
+<div class="flex flex-col items-center gap-1 mb-10">
+<p class="text-slate-400 text-sm">Didn't receive it?</p>
+<div class="flex items-center gap-2 text-sm font-medium">
+<span class="text-slate-400">Resend code in</span>
+<span class="text-primary font-semibold tabular-nums">00:42</span>
+</div>
+<!-- Hidden Resend Link (would appear after timer) -->
+<!-- <button class="text-primary font-semibold hover:text-primary/80 transition-colors text-sm">Resend Code</button> -->
+</div>
+<!-- Actions -->
+<div class="mt-auto w-full flex flex-col gap-4 mb-4">
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/20 active:scale-[0.98] transition-all">
+                Verify
+            </button>
+<button class="w-full py-3 text-slate-400 hover:text-white transition-colors text-sm font-medium">
+                Change email address
+            </button>
+</div>
+<!-- Keyboard spacer (simulated) -->
+<div class="h-6"></div>
+</div>
+<!-- Background decorative gradients -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

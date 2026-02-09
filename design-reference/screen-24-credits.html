@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Purchase Recording Credits - LiveCapture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep navy background as requested
+                        "card-dark": "#111B2E",
+                        "card-border": "#1E2D45",
+                        "text-secondary": "#7B8BA3",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex justify-center">
+<!-- Mobile Container (iPhone 15 Pro Frame simulation) -->
+<div class="w-full max-w-md bg-white dark:bg-background-dark min-h-screen relative overflow-hidden flex flex-col shadow-2xl">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between p-4 pt-12 pb-2 bg-transparent sticky top-0 z-10 backdrop-blur-md">
+<button class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<h1 class="text-white text-lg font-bold tracking-tight">Buy Credits</h1>
+<div class="size-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-5 pb-8 space-y-6 scrollbar-hide">
+<!-- Education Card -->
+<div class="bg-card-dark border border-card-border rounded-xl p-5 mt-2 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<h2 class="text-white text-2xl font-bold leading-tight">Pay per recording</h2>
+<span class="material-symbols-outlined text-primary text-2xl">auto_fix_high</span>
+</div>
+<p class="text-text-secondary text-sm leading-relaxed">Perfect for occasional users. Credits never expire, so you can use them whenever you need.</p>
+<div class="flex items-center gap-2 mt-1 bg-[#1A2639] w-fit px-3 py-1.5 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span class="text-white/90 text-xs font-medium">1 credit = 1 recording processed with AI</span>
+</div>
+</div>
+</div>
+<!-- Balance Section -->
+<section>
+<h3 class="text-text-secondary text-xs font-bold tracking-widest mb-3 uppercase pl-1">Your Balance</h3>
+<div class="bg-card-dark border border-card-border rounded-xl p-0 flex items-stretch overflow-hidden shadow-sm group hover:border-primary/30 transition-colors cursor-pointer">
+<div class="w-1.5 bg-primary"></div>
+<div class="flex-1 p-5 flex items-center justify-between">
+<div>
+<p class="text-text-secondary text-sm font-medium mb-1">Current Balance</p>
+<p class="text-white text-3xl font-bold tracking-tight">3 <span class="text-lg font-normal text-text-secondary">Credits</span></p>
+</div>
+<div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Packages Section -->
+<section class="space-y-3">
+<h3 class="text-text-secondary text-xs font-bold tracking-widest mb-1 uppercase pl-1">Buy Credits</h3>
+<!-- Package 1: Starter -->
+<div class="bg-card-dark border border-card-border rounded-xl p-4 flex items-center justify-between shadow-sm hover:border-white/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="bg-[#1A2639] size-12 rounded-full flex items-center justify-center">
+<span class="text-white font-bold text-lg">5</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-semibold text-lg">Starter Pack</span>
+<span class="text-text-secondary text-sm">$0.99 per credit</span>
+</div>
+</div>
+<button class="h-10 px-5 rounded-full border border-primary text-primary font-medium text-sm hover:bg-primary/10 transition-colors">
+                        $4.99
+                    </button>
+</div>
+<!-- Package 2: Best Value -->
+<div class="bg-card-dark border border-primary/50 rounded-xl p-4 relative shadow-[0_0_15px_rgba(60,131,246,0.15)] overflow-hidden">
+<!-- Gradient accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[40px] rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Best Value
+                    </div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 size-12 rounded-full flex items-center justify-center border border-primary/30">
+<span class="text-primary font-bold text-lg">15</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-semibold text-lg">Standard Pack</span>
+<span class="text-primary text-sm font-medium">$0.66 per credit</span>
+</div>
+</div>
+<button class="h-10 px-6 rounded-full bg-primary text-white font-bold text-sm shadow-lg hover:bg-blue-500 transition-colors transform active:scale-95">
+                            $9.99
+                        </button>
+</div>
+</div>
+<!-- Package 3: Pro -->
+<div class="bg-card-dark border border-card-border rounded-xl p-4 flex items-center justify-between shadow-sm hover:border-white/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="bg-[#1A2639] size-12 rounded-full flex items-center justify-center">
+<span class="text-white font-bold text-lg">50</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-semibold text-lg">Pro Pack</span>
+<span class="text-text-secondary text-sm">$0.60 per credit</span>
+</div>
+</div>
+<button class="h-10 px-5 rounded-full border border-primary text-primary font-medium text-sm hover:bg-primary/10 transition-colors">
+                        $29.99
+                    </button>
+</div>
+</section>
+<!-- Usage Section -->
+<section>
+<h3 class="text-text-secondary text-xs font-bold tracking-widest mb-3 uppercase pl-1 mt-6">Credit Usage</h3>
+<div class="bg-card-dark border border-card-border rounded-xl p-5 shadow-sm">
+<p class="text-white text-sm mb-4 font-medium">What's included in 1 credit?</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-text-secondary text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Full high-fidelity transcription</span>
+</li>
+<li class="flex items-center gap-3 text-text-secondary text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Speaker identification (Diarization)</span>
+</li>
+<li class="flex items-center gap-3 text-text-secondary text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>AI-generated summary &amp; key points</span>
+</li>
+<li class="flex items-center gap-3 text-text-secondary text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Unlimited export formats (PDF, DOCX)</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Footer Text -->
+<div class="text-center px-4 pt-4 pb-8">
+<p class="text-text-secondary/60 text-xs">
+                    Purchased credits are linked to your Apple ID and do not expire as long as your account remains active.
+                </p>
+</div>
+</main>
+<!-- Bottom Safe Area Spacer -->
+<div class="h-5 bg-background-dark w-full shrink-0"></div>
+</div>
+</body></html>

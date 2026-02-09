@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Interactive Transcript</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue as requested
+                        "secondary": "#7B8BA3", // Slate Grey
+                        "background-light": "#f5f7f8", // Kept for config consistency, but main focus is dark
+                        "background-dark": "#0B1120", // Deep Navy
+                        "surface-dark": "#151e32", // Slightly lighter for contrast elements
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .safe-area-top {
+            padding-top: max(env(safe-area-inset-top), 44px);
+        }
+        
+        .safe-area-bottom {
+            padding-bottom: max(env(safe-area-inset-bottom), 34px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden h-screen flex flex-col text-white">
+<!-- Top Status Bar Area (Mockup for iOS) -->
+<div class="fixed top-0 left-0 right-0 z-50 pointer-events-none safe-area-top flex justify-between px-6 items-start text-white text-xs font-semibold">
+<span class="pl-2 pt-1">9:41</span>
+<div class="flex gap-1.5 pt-1 pr-2">
+<span class="material-symbols-outlined text-[16px] leading-none">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px] leading-none">wifi</span>
+<span class="material-symbols-outlined text-[16px] leading-none">battery_full</span>
+</div>
+</div>
+<!-- Main Content Container -->
+<div class="flex-1 flex flex-col relative w-full max-w-md mx-auto h-full overflow-hidden bg-background-dark shadow-2xl">
+<!-- Top App Bar -->
+<header class="bg-background-dark/95 backdrop-blur-md sticky top-0 z-40 border-b border-white/5 safe-area-top pb-2">
+<div class="flex items-center justify-between px-4 pt-2 h-12">
+<button class="flex items-center justify-center size-10 text-white active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-white text-[17px] font-semibold tracking-tight text-center flex-1">Sermon Transcript</h1>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center size-10 text-white active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="text-primary text-[17px] font-medium active:opacity-70 transition-opacity pl-1">
+                        Edit
+                    </button>
+</div>
+</div>
+<!-- Sub-Header: Playback Status -->
+<div class="px-4 pb-3 pt-1">
+<div class="flex items-center gap-3 bg-surface-dark rounded-xl p-2 px-3 border border-white/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0 size-8">
+<span class="material-symbols-outlined text-lg">graphic_eq</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="text-white text-sm font-medium leading-none">Playing at 1.5x</p>
+<span class="text-secondary text-xs">12:45 remaining</span>
+</div>
+<!-- Mini fake waveform visual -->
+<div class="flex items-end gap-[2px] h-3 mt-1.5 w-full opacity-60">
+<div class="w-1 bg-primary h-[40%] rounded-full"></div>
+<div class="w-1 bg-primary h-[70%] rounded-full"></div>
+<div class="w-1 bg-primary h-[100%] rounded-full"></div>
+<div class="w-1 bg-primary h-[60%] rounded-full"></div>
+<div class="w-1 bg-primary h-[30%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[40%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[60%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[20%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[50%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[30%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[40%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[60%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[20%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[50%] rounded-full"></div>
+<div class="w-1 bg-white/20 h-[30%] rounded-full"></div>
+</div>
+</div>
+<button class="shrink-0 text-white flex items-center justify-center size-8">
+<span class="material-symbols-outlined filled text-2xl">pause_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Transcript Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar relative px-4 pb-32 pt-4">
+<!-- Paragraph 1 -->
+<div class="flex gap-4 mb-8 group">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                    04:15
+                </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">And</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">that</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">is</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">exactly</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">why</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">we</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">need</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">to</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">consider</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">context</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">of</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">passage</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">before</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">making</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">any</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">assumptions.</span>
+</div>
+</div>
+<!-- Paragraph 2 (Active) -->
+<div class="flex gap-4 mb-8 group relative">
+<!-- Context Menu (Simulated visible state for demo) -->
+<div class="absolute -top-14 left-16 z-50 bg-surface-dark border border-white/10 shadow-xl shadow-black/50 rounded-xl py-1.5 flex flex-col min-w-[180px] animate-in fade-in zoom-in-95 duration-200">
+<button class="flex items-center gap-3 px-4 py-2 hover:bg-white/5 w-full text-left text-sm text-white transition-colors">
+<span class="material-symbols-outlined text-lg text-secondary">format_quote</span>
+                        Create Quote Card
+                    </button>
+<div class="h-px bg-white/5 mx-2 my-0.5"></div>
+<button class="flex items-center gap-3 px-4 py-2 hover:bg-white/5 w-full text-left text-sm text-white transition-colors">
+<span class="material-symbols-outlined text-lg text-secondary">movie</span>
+                        Create Video Clip
+                    </button>
+<div class="h-px bg-white/5 mx-2 my-0.5"></div>
+<button class="flex items-center gap-3 px-4 py-2 hover:bg-white/5 w-full text-left text-sm text-white transition-colors">
+<span class="material-symbols-outlined text-lg text-secondary">bookmark</span>
+                        Add Marker
+                    </button>
+<!-- Arrow for tooltip -->
+<div class="absolute -bottom-1.5 left-8 size-3 bg-surface-dark border-r border-b border-white/10 rotate-45"></div>
+</div>
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-primary tabular-nums text-right select-none">
+                    04:30
+                </div>
+<div class="text-[17px] leading-[1.6] text-white">
+<span class="bg-primary/20 text-primary glow-text px-1 -mx-1 py-0.5 rounded box-decoration-clone">It isn't just about the words on the page, but the spirit in which they were written.</span>
+</div>
+</div>
+<!-- Paragraph 3 -->
+<div class="flex gap-4 mb-8 group">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                    04:45
+                </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">Moving</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">on</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">to</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">next</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">point,</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">let's</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">look</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">at</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">verse</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">ten</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">where</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">tone</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">shifts</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">dramatically.</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">Often</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">we</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">miss</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">this</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">subtle</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">nuance</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">in</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">standard</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">translations.</span>
+</div>
+</div>
+<!-- Paragraph 4 -->
+<div class="flex gap-4 mb-8 group">
+<div class="shrink-0 w-10 pt-1 text-xs font-medium text-secondary tabular-nums text-right select-none">
+                    05:02
+                </div>
+<div class="text-[17px] leading-[1.6] text-white/90">
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">The</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">historical</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">backdrop</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">of</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">ancient</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">civilizations</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">often</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">provides</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">key.</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">It</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">unlocks</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">the</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">meaning</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">hidden</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">between</span>
+<span class="hover:bg-white/5 rounded cursor-pointer transition-colors duration-100 px-0.5 -mx-0.5">lines.</span>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="h-20"></div>
+<!-- Floating "Jump to Current" Button -->
+<div class="fixed bottom-24 right-6 z-30">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-4 py-2.5 shadow-lg shadow-primary/30 active:scale-95 transition-all">
+<span class="text-sm font-semibold">Jump to Current</span>
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-[#0B1120]/95 backdrop-blur-xl border-t border-white/5 safe-area-bottom">
+<div class="flex items-center justify-between px-2 pt-2 pb-1">
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">library_music</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Library</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">insights</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Insights</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">description</span>
+</div>
+<span class="text-[10px] font-medium text-white">Transcript</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[24px]">edit_note</span>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Drafts</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="size-9 rounded-full group-hover:bg-white/5 flex items-center justify-center transition-colors">
+<div class="size-6 rounded-full overflow-hidden border border-secondary/30">
+<img alt="User profile avatar showing a smiling person" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMMjFA0IwJcI_0d84vV_WwHshoBvUkm-XAF2YEU2W2BpCPzvkIBUfkH0I6LvWO2SGfkALBf64fDlbEkzEOwErxnRc8L0EyqWB8_YZdAFrC-B893hdObCuuOkHmtIpvqWsgaJxkBcDIWUi7YuknOI3EUILQYGFo0HNNlO5OkGQ4JI7yGtaTYb4Y2e9-6ODgw17oZU4AuM_kqoDOsJr7FhzuQ18JLP9f9Y2ARvKkDKcm5IPrcGXQpFEvtFR3Mga79nh6IWNZvhJmNTxU"/>
+</div>
+</div>
+<span class="text-[10px] font-medium text-secondary group-hover:text-white transition-colors">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Billing &amp; History</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2877f6",
+                        "background-light": "#f5f7f8", // Not used due to hardcoded requirements, but kept for config compliance
+                        "background-dark": "#0B1120", // Deep navy from request
+                        "surface-dark": "#111B2E", // Card background from request
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0B1120] text-white font-display antialiased selection:bg-primary/30">
+<!-- Main Container (iPhone 15 Pro Frame simulation for context, though purely a full-width mobile view here) -->
+<div class="relative flex min-h-screen w-full flex-col mx-auto max-w-md bg-[#0B1120] overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="flex items-center px-4 py-3 pb-2 justify-between sticky top-0 z-10 bg-[#0B1120]/95 backdrop-blur-sm">
+<button aria-label="Go back" class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Billing &amp; History</h1>
+</header>
+<main class="flex-1 flex flex-col p-4 gap-6">
+<!-- Current Plan Section -->
+<section>
+<h3 class="text-[#8fa6cc] text-xs font-semibold tracking-wider uppercase mb-3 ml-1">Current Plan</h3>
+<!-- Active Plan Card -->
+<div class="relative flex flex-col rounded-xl border-2 border-primary bg-[#111B2E] p-5 shadow-lg overflow-hidden group">
+<!-- Subtle background gradient for depth -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex justify-between items-start mb-6">
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-xl font-bold">Plus Plan - Monthly</h2>
+<p class="text-white/60 text-sm">Next billing date: April 16, 2026</p>
+</div>
+<span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs font-bold uppercase tracking-wide border border-primary/30">Active</span>
+</div>
+<div class="relative z-10 flex items-baseline gap-1 mt-auto">
+<span class="text-2xl font-bold text-white">$9.99</span>
+<span class="text-white/60 text-sm font-medium">/mo</span>
+</div>
+</div>
+</section>
+<!-- Payment Method Section -->
+<section>
+<h3 class="text-[#8fa6cc] text-xs font-semibold tracking-wider uppercase mb-3 ml-1">Payment Method</h3>
+<div class="flex items-center justify-between rounded-xl bg-[#111B2E] p-4 border border-white/5 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-14 shrink-0 items-center justify-center rounded bg-white p-1">
+<!-- Visa Logo Placeholder -->
+<img alt="Visa Logo" class="h-full w-auto object-contain" data-alt="Visa credit card logo on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA2L66tuQc1zTBz6x6GBCUSvpH4cJ1n9LWFZ0qiF0uvxXWIifkYnEMWjgqbrrdlPHdit2oGilZNhfFf1i_e-tzK0bEc01kFhlV0znyo04bCmFtxPzMq-ycm1JC6PlTZEl5YY3QXJHrhdPg9lhvvkyt7vF1m-G_7QOILSIomObaJzPGSnWa2J0qM5d2xg-zNVtkp-r1i2IMlXG4L2xuvrDki6OW8iN5W08f-rJv8sBIITdZXKeIJR8mSnj3QwCTKmknUw4XXgJwhf8j"/>
+</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-medium leading-tight">Visa ending in 4242</p>
+<p class="text-white/40 text-xs">Expiry 12/28</p>
+</div>
+</div>
+<button class="text-primary text-sm font-semibold hover:text-primary/80 transition-colors px-2 py-1">
+                        Change
+                    </button>
+</div>
+</section>
+<!-- Past Transactions Section -->
+<section>
+<h3 class="text-[#8fa6cc] text-xs font-semibold tracking-wider uppercase mb-3 ml-1">Past Transactions</h3>
+<div class="flex flex-col rounded-xl bg-[#111B2E] border border-white/5 divide-y divide-white/5 overflow-hidden">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0B1120] border border-white/10 text-white/70 group-hover:border-primary/50 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">receipt_long</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-white text-sm font-medium">15 Credits</p>
+<p class="text-white/40 text-xs">Mar 10, 2026</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-medium">$9.99</span>
+<button aria-label="Download Receipt" class="text-primary hover:text-white transition-colors p-1 rounded-full hover:bg-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0B1120] border border-white/10 text-white/70 group-hover:border-primary/50 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">receipt_long</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-white text-sm font-medium">Plus Plan</p>
+<p class="text-white/40 text-xs">Feb 16, 2026</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-medium">$9.99</span>
+<button aria-label="Download Receipt" class="text-primary hover:text-white transition-colors p-1 rounded-full hover:bg-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0B1120] border border-white/10 text-white/70 group-hover:border-primary/50 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">receipt_long</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-white text-sm font-medium">5 Credits</p>
+<p class="text-white/40 text-xs">Feb 02, 2026</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-medium">$4.99</span>
+<button aria-label="Download Receipt" class="text-primary hover:text-white transition-colors p-1 rounded-full hover:bg-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Spacer for Scrolling -->
+<div class="h-10"></div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>App Onboarding Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", // Deep Navy as requested
+                        "secondary-text": "#7B8BA3",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for specific radius requirements */
+        .rounded-button {
+            border-radius: 16px;
+        }
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden h-screen w-full flex flex-col items-center justify-center">
+<!-- Mobile Frame Container -->
+<div class="relative w-full h-full max-w-[480px] flex flex-col justify-between bg-background-light dark:bg-background-dark text-white overflow-hidden">
+<!-- Status Bar Placeholder (Safe Area) -->
+<div class="h-12 w-full shrink-0"></div>
+<!-- Hero Illustration Section -->
+<div class="flex-1 flex items-center justify-center relative w-full px-6">
+<!-- Background Glow Effect -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none"></div>
+<!-- Illustration Container -->
+<div class="relative z-10 w-full max-w-[320px] aspect-square flex items-center justify-center">
+<!-- SVG Illustration constructed with Tailwind classes and SVG elements -->
+<svg class="w-full h-full drop-shadow-2xl" fill="none" viewbox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+<!-- Phone Outline -->
+<rect class="opacity-90" height="260" rx="24" stroke="white" stroke-width="2" width="160" x="80" y="40"></rect>
+<rect fill="#1e293b" fill-opacity="0.5" height="240" rx="16" width="140" x="90" y="50"></rect>
+<!-- Screen Content: Waveform -->
+<path d="M100 160 L105 150 L110 170 L115 140 L120 180 L125 130 L130 190 L135 120 L140 200 L145 150 L150 170 L155 140 L160 180 L165 150 L170 170 L175 160 L180 160 L185 155 L190 165 L195 160 L200 160 L205 150 L210 170 L215 160" stroke="#3c83f6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Floating Icons -->
+<!-- Camera Icon (Top Right) -->
+<g transform="translate(220, 60) rotate(15)">
+<circle class="fill-primary/20 stroke-primary" cx="20" cy="20" r="20" stroke-width="1.5"></circle>
+<path d="M14 20C14 16.6863 16.6863 14 20 14C23.3137 14 26 16.6863 26 20C26 23.3137 23.3137 26 20 26C16.6863 26 14 23.3137 14 20Z" fill="#3c83f6"></path>
+<path d="M18 12H22L23 14H27V26H13V14H17L18 12Z" fill="none" stroke="white" stroke-width="1.5"></path>
+</g>
+<!-- Heart Icon (Bottom Left) -->
+<g transform="translate(40, 200) rotate(-10)">
+<circle class="fill-background-dark stroke-secondary-text" cx="18" cy="18" r="18" stroke-width="1"></circle>
+<path d="M18 24.35L16.55 23.03C11.4 18.36 8 15.28 8 11.5C8 8.42 10.42 6 13.5 6C15.24 6 16.91 6.81 18 8.09C19.09 6.81 20.76 6 22.5 6C25.58 6 28 8.42 28 11.5C28 15.28 24.6 18.36 19.45 23.03L18 24.35Z" fill="#ef4444" stroke="none" transform="scale(0.6) translate(10,10)"></path>
+</g>
+<!-- Star Icon (Top Left) -->
+<g transform="translate(50, 60) rotate(-15)">
+<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#fbbf24" stroke="white" stroke-width="1"></path>
+</g>
+<!-- Document Icon (Bottom Right) -->
+<g transform="translate(200, 220) rotate(10)">
+<rect fill="#334155" height="40" rx="4" stroke="white" stroke-width="1.5" width="30" x="0" y="0"></rect>
+<line stroke="#7B8BA3" stroke-linecap="round" stroke-width="2" x1="6" x2="24" y1="10" y2="10"></line>
+<line stroke="#7B8BA3" stroke-linecap="round" stroke-width="2" x1="6" x2="24" y1="18" y2="18"></line>
+<line stroke="#3c83f6" stroke-linecap="round" stroke-width="2" x1="6" x2="16" y1="26" y2="26"></line>
+</g>
+<!-- Play Button (Center Overlay) -->
+<circle cx="160" cy="160" fill="white" fill-opacity="0.1" r="24" stroke="white" stroke-width="1"></circle>
+<path d="M155 148V172L173 160L155 148Z" fill="white"></path>
+</svg>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-col items-center justify-end w-full px-6 pb-8 z-20">
+<!-- Text Content -->
+<div class="w-full text-center space-y-4 mb-6">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-[1.1]">
+                    Capture. React. Create.
+                </h1>
+<p class="text-secondary-text text-base font-normal leading-relaxed max-w-[340px] mx-auto">
+                    Record sermons, lectures, and meetings. Mark the moments that matter. AI turns everything into notes, study guides, and social content.
+                </p>
+</div>
+<!-- Feature Pills -->
+<div class="flex flex-wrap justify-center gap-3 mb-8 w-full">
+<div class="flex items-center justify-center px-4 py-2 rounded-full border border-gray-700/50 backdrop-blur-sm bg-white/5">
+<span class="text-white text-xs font-medium whitespace-nowrap">🎙️ Live Recording</span>
+</div>
+<div class="flex items-center justify-center px-4 py-2 rounded-full border border-gray-700/50 backdrop-blur-sm bg-white/5">
+<span class="text-white text-xs font-medium whitespace-nowrap">📸 Photo &amp; Video</span>
+</div>
+<div class="flex items-center justify-center px-4 py-2 rounded-full border border-gray-700/50 backdrop-blur-sm bg-white/5">
+<span class="text-white text-xs font-medium whitespace-nowrap">✨ AI-Powered</span>
+</div>
+</div>
+<!-- Pagination Dots -->
+<div class="flex w-full flex-row items-center justify-center gap-2 mb-6">
+<div class="h-2 w-2 rounded-full bg-primary transition-all duration-300 w-6"></div>
+<div class="h-2 w-2 rounded-full bg-[#3b4454]"></div>
+<div class="h-2 w-2 rounded-full bg-[#3b4454]"></div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold h-[56px] rounded-button flex items-center justify-center transition-colors mb-4 text-[17px]">
+                Get Started
+            </button>
+<!-- Login Link -->
+<div class="text-secondary-text text-sm font-medium">
+                Already have an account? <a class="text-white hover:text-primary transition-colors ml-1" href="#">Sign in</a>
+</div>
+<!-- Home Indicator Safe Area -->
+<div class="h-4 w-full"></div>
+</div>
+</div>
+</body></html>

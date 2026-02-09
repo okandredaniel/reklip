@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Collaborative Session</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", 
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0B1120", /* Updated to match user request: Deep navy */
+                        "surface-dark": "#111B2E", /* Updated to match user request: Lighter navy */
+                        "text-secondary": "#94A3B8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden selection:bg-primary/30">
+<div class="relative mx-auto h-screen w-full max-w-md bg-background-light dark:bg-background-dark flex flex-col overflow-hidden shadow-2xl">
+<!-- Status Bar Area (Mock) -->
+<div class="h-12 w-full shrink-0"></div>
+<!-- Header -->
+<div class="flex items-center justify-between px-4 pb-2 shrink-0">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-white tracking-tight flex-1 text-center pr-10">Create Session</h1>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto overflow-x-hidden pb-32 no-scrollbar">
+<!-- Hero Illustration -->
+<div class="px-6 py-6 flex justify-center">
+<div class="relative w-32 h-32 flex items-center justify-center rounded-full bg-gradient-to-tr from-primary/20 to-blue-900/10 border border-white/5">
+<!-- Custom Illustration Placeholder -->
+<div class="absolute inset-0 rounded-full blur-xl bg-primary/20"></div>
+<div class="relative z-10 flex">
+<span class="material-symbols-outlined text-primary text-6xl -mr-4 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transform -rotate-12">mic</span>
+<span class="material-symbols-outlined text-white/80 text-6xl -ml-4 transform rotate-12">mic</span>
+</div>
+<!-- Accent Lines -->
+<div class="absolute w-full h-full border-2 border-primary/30 rounded-full animate-pulse scale-110 opacity-30"></div>
+</div>
+</div>
+<!-- Context Card -->
+<div class="px-6 text-center mb-8">
+<h2 class="text-2xl font-bold text-white mb-2">Record Together</h2>
+<p class="text-text-secondary text-sm leading-relaxed max-w-xs mx-auto">
+                    Create a shared session so everyone captures the same event from different angles.
+                </p>
+</div>
+<!-- Form Fields -->
+<div class="px-6 space-y-4">
+<!-- Session Name -->
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-text-secondary ml-2">Session Name</label>
+<div class="relative">
+<input class="w-full bg-surface-dark border-0 rounded-2xl py-4 px-5 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-[#162032] transition-all" placeholder="e.g. Sunday Bible Study" type="text" value="Sunday Bible Study"/>
+</div>
+</div>
+<!-- Event Type & Date Row -->
+<div class="flex gap-4">
+<div class="space-y-1.5 flex-1">
+<label class="text-sm font-medium text-text-secondary ml-2">Event Type</label>
+<div class="relative group">
+<select class="w-full bg-surface-dark border-0 rounded-2xl py-4 pl-5 pr-10 text-white appearance-none focus:ring-2 focus:ring-primary focus:bg-[#162032] transition-all cursor-pointer">
+<option>Sermon</option>
+<option>Concert</option>
+<option>Meeting</option>
+<option>Interview</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-hover:text-primary transition-colors">arrow_drop_down</span>
+</div>
+</div>
+<div class="space-y-1.5 flex-1">
+<label class="text-sm font-medium text-text-secondary ml-2">Date &amp; Time</label>
+<div class="relative group">
+<input class="w-full bg-surface-dark border-0 rounded-2xl py-4 px-5 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-[#162032] transition-all truncate" type="text" value="Today, 10:00 AM"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm">calendar_today</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px bg-white/5 my-8 mx-6"></div>
+<!-- Invite Participants Section -->
+<div class="px-6">
+<h3 class="text-xs font-bold text-text-secondary tracking-widest uppercase mb-4 ml-1">Invite Participants</h3>
+<!-- Share Link Card -->
+<div class="bg-surface-dark rounded-2xl p-4 flex items-center justify-between mb-4 border border-white/5 hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">link</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm">Share invite link</span>
+<span class="text-text-secondary text-xs truncate max-w-[140px]">livecapture.app/j/8392...</span>
+</div>
+</div>
+<button class="text-white/70 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+<!-- Quick Share Icons -->
+<div class="flex gap-4 justify-between mb-6">
+<button class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-dark border border-white/5 flex items-center justify-center group-hover:bg-[#162032] group-hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-green-400">chat</span> <!-- Simulating WhatsApp -->
+</div>
+<span class="text-xs text-text-secondary group-hover:text-white transition-colors">WhatsApp</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-dark border border-white/5 flex items-center justify-center group-hover:bg-[#162032] group-hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-blue-400">mail</span>
+</div>
+<span class="text-xs text-text-secondary group-hover:text-white transition-colors">Email</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-dark border border-white/5 flex items-center justify-center group-hover:bg-[#162032] group-hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-white">qr_code_2</span>
+</div>
+<span class="text-xs text-text-secondary group-hover:text-white transition-colors">QR Code</span>
+</button>
+</div>
+<!-- Email Input & Avatars -->
+<div class="space-y-4">
+<div class="relative">
+<input class="w-full bg-surface-dark border-0 rounded-2xl py-4 pl-5 pr-14 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-[#162032] transition-all" placeholder="Or enter emails..." type="email"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+<!-- Avatars -->
+<div class="flex items-center justify-start pl-2">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-background-dark bg-indigo-500 flex items-center justify-center text-xs font-bold text-white" data-alt="Avatar with initials JD" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADgbGjtApg2q-oW1GSNJyF99UVP_ceCj4dYNUZf0cegIVH8KlJk-VqQyjOo8mNdiJdiZM7sbY7NTK12bHFNY36Al9bcCdXMjX88FAT_X0Lip0vI_Qj450CFK-QffEuPVXnkrOGdQ4L6HzdfW3rDa77bsuuTDhWBykYshnaW1tAZUsrbRoDdZuRc1L7NuD3pXY2s57b4uTYr1BwRn1f7LeBJopMgT6M57LsS0sp5r3yPs3SEWoaJMo7n9VX_wAyqG8qhLJJGDNA1-Aj');"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background-dark bg-purple-500 flex items-center justify-center text-xs font-bold text-white" data-alt="Avatar with initials AS" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzN4YvGe9Tn4SOShSSOZzSFo6_Rfm1l73qt6pDxhz3FmbhpzgvF5OjD7xrVu2z7lLY60bkN4gHPynMwMc3-IFeJRIePW_ixWhyaMBahXSu2wIZROQKSPqwB8-RnzvsGENEhxWBzU_MXT1GyDusMCqZgsycL8yUo9PaIMksdk5sbNhX_k07nEHHC3idyouAnWZToQbx_G--S8AgWCIcf9os2sD7gO_PhXR-aetJ0cHT6fZLjAEcbB_-M0DPeMypxfRWNuH3YZX91n5d');"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background-dark bg-pink-500 flex items-center justify-center text-xs font-bold text-white" data-alt="Avatar with initials MK" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALNMkJ93rz8Bdm0CNdB1bQCTHJvk5t0ZAQVvn839Ibvc-c6OBJrDj8kpzvyisqBhriKKsxlqNQdx08vL8pfeWlEcB3QxZETIUlVeJajNmTf2bg38hp2fyzZtPdkbnjeBEytM1TMvLMdaPJRYOdTR5WXH964e_k9rQQKgrXm-rsgLCX9t2zIciRddeWZyTALFsU7w3QsmRkzXNSkhic_aER76Wik3hXt5P3aboeY-e7lbh00YVM9sb55ddCnM7Uvnq5L-WDX2O44Urj');"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background-dark bg-surface-dark text-text-secondary text-xs font-medium flex items-center justify-center">
+                                +2
+                            </div>
+</div>
+<span class="text-sm text-text-secondary ml-4">invited</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Button -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent z-20">
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-4 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Start Session</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Home Indicator Safe Area -->
+<div class="h-5"></div>
+</div>
+</div>
+</body></html>
