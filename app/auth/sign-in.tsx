@@ -59,7 +59,7 @@ export default function SignInScreen() {
     setTimeout(() => {
       setLoading(false);
       setIsAuthenticated(true);
-      router.replace("/(tabs)/library");
+      router.replace("/permissions/microphone");
     }, 1000);
   };
 
@@ -130,7 +130,7 @@ export default function SignInScreen() {
             <AuthFooterLink
               message="Don't have an account?"
               linkText="Sign up"
-              onPress={() => router.push("/auth/sign-up")}
+              onPress={() => router.replace("/auth/sign-up")}
             />
           </FadeInView>
         </ScrollView>

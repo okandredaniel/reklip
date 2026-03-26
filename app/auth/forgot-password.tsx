@@ -125,7 +125,7 @@ export default function ForgotPasswordScreen() {
 
       <FadeInView delay={350} className="items-center pb-8">
         <Pressable
-          onPress={() => router.push("/auth/sign-in")}
+          onPress={() => router.back()}
           className="flex-row items-center gap-1"
         >
           <ArrowLeftIcon size={14} color="#3B82F6" />

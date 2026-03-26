@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { AuthFooterLink } from "@/components/auth/AuthFooterLink";
 import { useAuthStore } from "@/stores/authStore";
 import { FadeInView } from "@/components/animated/FadeInView";
+import { PaginationDots } from "@/components/ui/PaginationDots";
+import { FeaturePill } from "@/components/ui/FeaturePill";
 import { StaggerItem } from "@/components/animated/StaggerItem";
 import Svg, { Rect, Path, Circle, Line, G } from "react-native-svg";
 
@@ -54,28 +56,18 @@ function HeroIllustration() {
   );
 }
 
-function FeaturePill({ icon, label }: { icon: string; label: string }) {
-  return (
-    <View className="px-4 py-2 rounded-full border border-card-border bg-white/5">
-      <Text className="text-white text-xs font-medium">
-        {icon} {label}
-      </Text>
-    </View>
-  );
-}
 
 export default function WelcomeScreen() {
   const router = useRouter();
   const setHasOnboarded = useAuthStore((s) => s.setHasOnboarded);
 
   const handleGetStarted = () => {
-    setHasOnboarded(true);
-    router.push("/auth/sign-up");
+    router.replace("/onboarding/use-case");
   };
 
   const handleSignIn = () => {
     setHasOnboarded(true);
-    router.push("/auth/sign-in");
+    router.replace("/auth/sign-in");
   };
 
   return (
@@ -100,21 +92,19 @@ export default function WelcomeScreen() {
 
         <View className="flex-row flex-wrap justify-center gap-3 mb-8">
           <StaggerItem index={0} baseDelay={200}>
-            <FeaturePill icon="🎙️" label="Live Recording" />
+            <FeaturePill icon={<Text className="text-sm">🎙️</Text>} label="Live Recording" />
           </StaggerItem>
           <StaggerItem index={1} baseDelay={200}>
-            <FeaturePill icon="📸" label="Photo & Video" />
+            <FeaturePill icon={<Text className="text-sm">📸</Text>} label="Photo & Video" />
           </StaggerItem>
           <StaggerItem index={2} baseDelay={200}>
-            <FeaturePill icon="✨" label="AI-Powered" />
+            <FeaturePill icon={<Text className="text-sm">✨</Text>} label="AI-Powered" />
           </StaggerItem>
         </View>
 
         <FadeInView delay={300}>
-          <View className="flex-row items-center gap-2 mb-6">
-            <View className="w-6 h-2 rounded-full bg-primary" />
-            <View className="w-2 h-2 rounded-full bg-card-border" />
-            <View className="w-2 h-2 rounded-full bg-card-border" />
+          <View className="mb-6">
+            <PaginationDots count={3} activeIndex={0} />
           </View>
         </FadeInView>
 

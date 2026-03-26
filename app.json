@@ -12,7 +12,6 @@
       "supportsTablet": true,
       "infoPlist": {
         "UIBackgroundModes": [
-          "audio",
           "audio"
         ],
         "NSMicrophoneUsageDescription": "LiveCapture needs your microphone to record audio.",

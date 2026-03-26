@@ -143,7 +143,7 @@ export default function SignUpScreen() {
             <AuthFooterLink
               message="Already have an account?"
               linkText="Sign in"
-              onPress={() => router.push("/auth/sign-in")}
+              onPress={() => router.replace("/auth/sign-in")}
             />
           </FadeInView>
         </ScrollView>

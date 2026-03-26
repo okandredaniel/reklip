@@ -131,7 +131,7 @@ export default function EmailVerificationScreen() {
     setTimeout(() => {
       setLoading(false);
       setIsAuthenticated(true);
-      router.replace("/(tabs)/library");
+      router.replace("/permissions/microphone");
     }, 1000);
   };
 
